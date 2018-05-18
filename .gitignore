@@ -20,6 +20,11 @@
 
 # Ignore Byebug command history file.
 .byebug_history
-.rubocop.yml
-.rubocop_disabled.yml
+/vendor
+/test
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml
 .rubocop_enabled.yml
+.rubocop_disabled.yml
+.rubocop.yml

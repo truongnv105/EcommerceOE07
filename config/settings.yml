@@ -1,0 +1,11 @@
+users:
+  name:
+    max_length: 55
+  email:
+    max_length: 255
+comments:
+  content:
+    min_length: 80
+products:
+  name:
+    min_length: 20
