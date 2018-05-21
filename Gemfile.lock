@@ -133,6 +133,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
+    pg (1.0.0)
     puma (3.11.4)
     rack (2.0.5)
     rack-test (1.0.0)
@@ -218,8 +219,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt (~> 3.1.11)
-  bootstrap-sass (= 3.3.7)
-  bootstrap-will_paginate (= 1.0.0)
+  bootstrap-sass (~> 3.3.7)
+  bootstrap-will_paginate (~> 1.0.0)
   byebug
   carrierwave (= 1.2.2)
   coffee-rails (~> 4.2)
@@ -229,6 +230,7 @@ DEPENDENCIES
   jquery-rails
   jquery-slick-rails
   listen (~> 3.0.5)
+  pg
   puma (~> 3.0)
   rails (~> 5.1.6)
   rubocop (~> 0.5.0)

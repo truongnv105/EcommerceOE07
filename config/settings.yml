@@ -3,9 +3,10 @@ users:
     max_length: 55
   email:
     max_length: 255
-comments:
-  content:
-    min_length: 80
-products:
-  name:
-    min_length: 20
+  password:
+    min_length: 8
+  phone_number:
+    max_length: 11
+  address:
+    min_length: 50
+    max_length: 255
