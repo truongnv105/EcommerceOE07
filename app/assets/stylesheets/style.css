@@ -51,7 +51,7 @@ hr {
 }
 
 /*----------------------------*\
-	Buttons
+  Buttons
 \*----------------------------*/
 
 .main-btn, .primary-btn {
@@ -97,7 +97,7 @@ hr {
 }
 
 /*----------------------------*\
-	Inputs
+  Inputs
 \*----------------------------*/
 
 .input {
@@ -137,7 +137,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Lists
+  Lists
 \*----------------------------*/
 
 .list-links .list-links-title {
@@ -182,13 +182,8 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Sections
+  Sections
 \*----------------------------*/
-
-.section {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
 
 .section-grey {
   background: #F6F7F8;
@@ -217,7 +212,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Breadcrumb
+  Breadcrumb
 \*----------------------------*/
 
 #breadcrumb {
@@ -242,7 +237,7 @@ textarea.input {
 }
 
 /*=========================================================
-	02 -> HEADER
+  02 -> HEADER
 ===========================================================*/
 
 #header {
@@ -251,7 +246,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Top header
+  Top header
 \*----------------------------*/
 
 #top-header {
@@ -274,7 +269,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	logo
+  logo
 \*----------------------------*/
 
 .header-logo {
@@ -288,7 +283,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Search header
+  Search header
 \*----------------------------*/
 
 .header-search {
@@ -324,7 +319,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Account header
+  Account header
 \*----------------------------*/
 
 .header-btns>li {
@@ -361,7 +356,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Cart header
+  Cart header
 \*----------------------------*/
 
 .header-cart .header-btns-icon .qty {
@@ -401,7 +396,7 @@ textarea.input {
 }
 
 /*=========================================================
-	03 -> NAVIGATION
+  03 -> NAVIGATION
 ===========================================================*/
 
 #navigation {
@@ -414,7 +409,7 @@ textarea.input {
 
 /*----------------------------*\
 /*----------------------------*\
-	Menu nav
+  Menu nav
 \*----------------------------*/
 
 .menu-nav .menu-header {
@@ -448,12 +443,12 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Dropdowns
+  Dropdowns
 \*----------------------------*/
 
 .custom-menu {
   position: absolute;
-  padding: 15px;
+  padding: 5px 15px;
   background: #FFF;
   -webkit-box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.175);
@@ -506,7 +501,6 @@ textarea.input {
   -ms-transform: translate(0px, 15px);
   transform: translate(0px, 15px);
   width: auto;
-  min-width: 750px;
   max-width: 100%;
 }
 
@@ -539,7 +533,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Mobile nav
+  Mobile nav
 \*----------------------------*/
 
 #header .nav-toggle {
@@ -644,7 +638,7 @@ textarea.input {
 }
 
 /*=========================================================
-	04 -> BANNERS
+  04 -> BANNERS
 ===========================================================*/
 
 .banner {
@@ -680,7 +674,7 @@ textarea.input {
 }
 
 /*=========================================================
-	05 -> HOME SLIDER
+  05 -> HOME SLIDER
 ===========================================================*/
 
 /*#home .home-wrap {
@@ -692,7 +686,7 @@ textarea.input {
 }
 
 /*=========================================================
-	06 -> PRODUCT
+  06 -> PRODUCT
 ===========================================================*/
 
 .product .product-old-price {
@@ -751,7 +745,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Single product
+  Single product
 \*----------------------------*/
 
 .product.product-single {
@@ -778,61 +772,6 @@ textarea.input {
   width: 100%;
 }
 
-.product.product-single .product-thumb:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #FFF;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 0;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-}
-
-.product.product-single:hover .product-thumb:after {
-  opacity: 0.7;
-  visibility: visible;
-}
-
-.product.product-single .quick-view {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  visibility: hidden;
-  z-index: 20;
-}
-
-.product.product-single:hover .quick-view {
-  opacity: 1;
-  visibility: visible;
-}
-
-.product.product-single .product-label {
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.product.product-single .product-label>span {
-  display: block;
-}
-
-.product.product-single .product-countdown {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-}
-
 .product.product-single .product-body {
   padding: 15px;
 }
@@ -848,6 +787,9 @@ textarea.input {
 
 .product.product-single .product-name {
   font-size: 16px;
+  margin-bottom: 0px;
+  height: 51px;
+  overflow: hidden;
 }
 
 .product.product-single .product-btns {
@@ -856,6 +798,7 @@ textarea.input {
   visibility: hidden;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  text-align: center;
 }
 
 .product.product-single:hover .product-btns {
@@ -875,7 +818,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	 Widget product
+   Widget product
 \*----------------------------*/
 
 .product.product-widget {
@@ -929,7 +872,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Product slick
+  Product slick
 \*----------------------------*/
 
 .product-slick .slick-slide {
@@ -938,11 +881,11 @@ textarea.input {
 }
 
 /*=========================================================
-	07 -> PRODUCTS PAGE
+  07 -> PRODUCTS PAGE
 ===========================================================*/
 
 /*----------------------------*\
-	Aside
+  Aside
 \*----------------------------*/
 
 #aside .aside {
@@ -1057,7 +1000,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Store
+  Store
 \*----------------------------*/
 
 #store {
@@ -1134,11 +1077,11 @@ textarea.input {
 }
 
 /*=========================================================
-	08 -> PRODUCT DETAILS PAGE
+  08 -> PRODUCT DETAILS PAGE
 ===========================================================*/
 
 /*----------------------------*\
-	Product view
+  Product view
 \*----------------------------*/
 
 #product-main-view .slick-arrow {
@@ -1173,7 +1116,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Product details
+  Product details
 \*----------------------------*/
 
 .product.product-details .product-name {
@@ -1250,7 +1193,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Product tab
+  Product tab
 \*----------------------------*/
 
 .product-tab {
@@ -1392,7 +1335,7 @@ textarea.input {
 }
 
 /*=========================================================
-	09 -> CHECKOUT PAGE
+  09 -> CHECKOUT PAGE
 ===========================================================*/
 
 .shiping-methods {
@@ -1459,7 +1402,7 @@ textarea.input {
 }
 
 /*=========================================================
-	10 -> FOOTER
+  10 -> FOOTER
 ===========================================================*/
 
 .footer {
@@ -1502,11 +1445,11 @@ textarea.input {
 }
 
 /*=========================================================
-	11 -> SLICK
+  11 -> SLICK
 ===========================================================*/
 
 /*----------------------------*\
-	Arrows
+  Arrows
 \*----------------------------*/
 
 .slick-prev, .slick-next {
@@ -1541,7 +1484,7 @@ textarea.input {
 }
 
 /*----------------------------*\
-	Dots
+  Dots
 \*----------------------------*/
 
 .slick-dots li, .slick-dots li button, .slick-dots li button:before {
@@ -1677,7 +1620,7 @@ textarea.input {
 
 
 /*=========================================================
-	12 -> RESPONSIVE
+  12 -> RESPONSIVE
 ===========================================================*/
 
 @media only screen and (max-width: 991px) {

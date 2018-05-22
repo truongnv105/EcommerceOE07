@@ -10,3 +10,9 @@ users:
   address:
     min_length: 50
     max_length: 255
+comments:
+  content:
+    min_length: 80
+products:
+  name:
+    min_length: 20
