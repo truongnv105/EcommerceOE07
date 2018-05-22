@@ -40,6 +40,22 @@ en:
   sort_by: "Sort By"
   price: "Price"
   rating: "Rating"
+  phone_number: "Phone number"
+  address: "Address"
+  save: "Save"
+  welcome: "Welcome to Shop-NT!"
+  rss_feed: "rss feed"
+  all_categories: "All Categories"
+  my_account: "My Account"
+  join: "Join"
+  compare: "Compare"
+  checkout: "Checkout"
+  create_account: "Create An Account"
+  my_cart: "My Cart:"
+  test_sp: "Product Name Goes Here"
+  enter_keyword: "Enter your keyword"
+  settings: "Settings"
+  profile: "Profile"
   users:
     new:
       name: "Name:"
@@ -52,10 +68,24 @@ en:
     create:
       check_email: "Please check your email to activate your account."
       failure: "Cannot create new user"
+    edit:
+      edit_user: "Edit User"
+      save_changes: "Save changes"
+      update_your_profile: "Update your Profile"
+    show:
+      profile_account: "Profile Account"
+    update:
+      profile_updated: "Profile updated"
+    logged_in_user:
+      please_log_in: "Please log in."
+    load_user:
+      a_sui_mess: "<a-suitable-message-here>"
   AccountActivations:
     edit:
       activated: "Account activated!"
       inactivate: "Invalid activation link"
+      edit_user: "Edit User"
+      save_changes: "Save changes"
   helpers:
     application_helper:
       my_shop: "ANT shop"
