@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
   get "/admin", to: "admin#index"
+  get "password_resets/new"
+  get "password_resets/edit"
 
   resources :users
   resources :account_activations, only: :edit
+  resources :password_resets, except: %i(index show)
 end

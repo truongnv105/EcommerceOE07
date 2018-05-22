@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       if user.activated?
         log_in user
+        params[:session][:remember_me] == "1" ? remember(user) : forget(user)
         redirect_to user
       else
         flash[:warning] = t ".message"
