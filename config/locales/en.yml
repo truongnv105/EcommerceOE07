@@ -1,4 +1,23 @@
 en:
+  menu: "Menu"
+  home: "Home"
+  pc: "PC"
+  dell: "DELL"
+  hp: "HP"
+  lenovo: "LENOVO"
+  asus: "ASUS"
+  laptop: "LAPTOP"
+  apple: "APPLE"
+  accessories: "PHỤ KIỆN"
+  ban_phim: "BÀN PHÍM"
+  chuot: "CHUỘT"
+  tai_nghe: "TAI NGHE"
+  sac: "SẠC"
+  pin: "PIN"
+  about: "ABOUT"
+  contact: "CONTACT"
+  help: "HELP"
+  add_to_cart: "Add to Cart"
   users:
     new:
       name: "Name:"
@@ -28,3 +47,9 @@ en:
       account_activation: "Account activation"
     password_reset:
       hi: "Hi"
+  static_pages:
+    index:
+      image_slider: "image slider"
+      laptop_collection: "Laptop Product Collection"
+      mobile_collection: "Mobile Product Collection"
+      icon_hot: "icon hot"
