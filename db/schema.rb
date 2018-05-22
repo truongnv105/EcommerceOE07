@@ -95,6 +95,8 @@ ActiveRecord::Schema.define(version: 20180518070747) do
     t.string "remember_digest"
     t.boolean "is_admin", default: false
     t.string "address"
+    t.string "reset_digest"
+    t.datetime "reset_sent_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
