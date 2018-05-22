@@ -1,8 +1,6 @@
 <h1><%= t ".ant_shop" %></h1>
-
 <p>Hi <%= @user.name %>,</p>
-
 <p><%= t ".welcome_ant_shop" %></p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<%= link_to t(".activate"), edit_account_activation_url(@user.activation_token,
   email: @user.email) %>
