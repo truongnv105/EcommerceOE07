@@ -1,23 +1,30 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  users:
+    new:
+      name: "Name:"
+      email: "Email:"
+      phone_number: "Phone number:"
+      password: "Password:"
+      password_confirmation: "Password confirmation:"
+      address: "Address:"
+      register: "Register"
+    create:
+      check_email: "Please check your email to activate your account."
+      failure: "Cannot create new user"
+  AccountActivations:
+    edit:
+      activated: "Account activated!"
+      inactivate: "Invalid activation link"
+  helpers:
+    application_helper:
+      my_shop: "ANT shop"
+  user_mailer:
+    account_activation:
+      welcome_ant_shop: "Welcome to the ANT shop! Click on the link below
+        to activate your account:"
+      ant_shop: "ANT shop"
+  mailers:
+    user_mailer:
+      account_activation: "Account activation"
+    password_reset:
+      hi: "Hi"

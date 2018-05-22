@@ -1,3 +1,26 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+
+.product {
+  &.product-single {
+    .product-btns {
+      .primary-btn {
+        width: 80%;
+      }
+    }
+    .product-thumb {
+      &>a {
+        display: block;
+        height: 300px;
+      }
+    }
+  }
+}
+.list-links {
+  li {
+    &>a {
+      width: 100%;
+    }
+  }
+}

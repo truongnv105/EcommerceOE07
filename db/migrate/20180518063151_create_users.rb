@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :email, unique: true
       t.string :password_digest
       t.string :phone_number
-      t.string :activate_digest
+      t.string :activation_digest
       t.boolean :activated, default: false
       t.datetime :activated_at
       t.string :remember_digest
