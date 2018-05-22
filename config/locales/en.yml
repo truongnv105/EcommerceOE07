@@ -42,6 +42,7 @@ en:
       welcome_ant_shop: "Welcome to the ANT shop! Click on the link below
         to activate your account:"
       ant_shop: "ANT shop"
+      activate: "Activate"
   mailers:
     user_mailer:
       account_activation: "Account activation"
@@ -53,3 +54,12 @@ en:
       laptop_collection: "Laptop Product Collection"
       mobile_collection: "Mobile Product Collection"
       icon_hot: "icon hot"
+  sessions:
+    new:
+      name: "Email:"
+      password: "Password:"
+      login: "Login"
+    create:
+      success: "Welcome to..,."
+      fail: "Email/password in valid"
+      message: "Account not activated. Check your email for the activation link"
