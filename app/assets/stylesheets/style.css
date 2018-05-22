@@ -1399,6 +1399,7 @@ textarea.input {
 .shopping-cart-table>tfoot>tr>.total {
   font-size: 24px;
   color: #F8694A;
+  text-align: right;
 }
 
 /*=========================================================

@@ -16,3 +16,4 @@
 //= require jquery.slick
 //= require jquery.zoom.min
 //= require nouislider.min
+//= require main
