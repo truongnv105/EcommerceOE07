@@ -1,0 +1,21 @@
+<h4 class="title_login"><%= t "login" %></h4>
+<%= form_for(:session, url: login_path, remote: true) do |f| %>
+  <div class="show_error">
+    <ul></ul>
+  </div>
+
+  <%= f.label :email, t(".email") %><span class="red-req">*</span>
+  <%= f.email_field :email, :required => true, class: "form-control" %>
+
+  <%= f.label :password, t(".password") %><span class="red-req">*</span>
+  <%= f.password_field :password, :required => true, class: "form-control" %>
+  <%= link_to t(".reset_password"), new_password_reset_path, class: "link_reset" %>
+
+  <%= f.label :remember_me, t(".remember"), class: "checkbox inline checkbox_remember" do %>
+    <%= f.check_box :remember_me %>
+    <span><%= t ".remember_me" %></span>
+  <% end %>
+
+  <%= f.submit t(".login"), class: "btn btn-primary form-control" %>
+<% end %>
+<button type="button" class="btn btn-default close-modal" data-dismiss="modal"><%= t "x" %></button>

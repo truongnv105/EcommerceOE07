@@ -56,6 +56,16 @@ en:
   enter_keyword: "Enter your keyword"
   settings: "Settings"
   profile: "Profile"
+  sign_up: "SIGN UP"
+  login: "LOGIN"
+  logout: "Log out"
+  welcome: "Welcome to Shop-ANT!"
+  cate: "Category"
+  x: "X"
+  my_account: "My Account"
+  profile_user: "Profile User"
+  settings: "Settings"
+  checkout: "Checkout"
   users:
     new:
       name: "Name:"
@@ -115,12 +125,12 @@ en:
       icon_hot: "icon hot"
   sessions:
     new:
-      name: "Email:"
+      email: "Email:"
       password: "Password:"
       login: "Login"
       remember_me: "Remember me on this computer."
       remember: "Remember me"
-      reset_password: "(forgot password)"
+      reset_password: "Lost your password ?"
     create:
       success: "Welcome to..,."
       fail: "Email/password in valid"

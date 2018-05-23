@@ -1,6 +1,10 @@
 class SessionsController < ApplicationController
   def new
     @user = User.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -10,14 +14,24 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user
         params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_to user
+        flash.now[:success] = t ".success"
+        respond_to do |format|
+          format.html{redirect_to request.referer || root_path}
+          format.js
+        end
       else
-        flash[:warning] = t ".message"
-        redirect_to root_url
+        flash.now[:error] = t ".message"
+        respond_to do |format|
+          format.html{redirect_to request.referer || root_path}
+          format.js
+        end
       end
     else
-      flash.now[:danger] = t ".fail"
-      render :new
+      flash.now[:error] = t ".fail"
+      respond_to do |format|
+        format.html{redirect_to request.referer || root_path}
+        format.js
+      end
     end
   end
 

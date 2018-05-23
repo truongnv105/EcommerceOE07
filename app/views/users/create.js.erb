@@ -1,0 +1,10 @@
+<% if @ajax_error.nil? %>
+  $('#signup').modal('hide');
+  alert('<%= t "users.create.check_email" %>');
+<% else %>
+  $('.show_error ul').addClass('alert alert-danger');
+  <% @ajax_error.full_messages.each do  |msg| %>
+    $('.show_error ul').append('<li><%= msg %></li>');
+  <% end %>
+  $('body').append('<%= j render "shared/end_alert" %>');
+<% end %>
