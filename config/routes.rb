@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/signup", to: "users#new"
   post "/signup", to: "users#create"
-  get "/admin", to: "admin#index"
   get "password_resets/new"
   get "password_resets/edit"
+  get "/checkout", to: "order_details#checkout"
 
+  namespace :admin do
+    get "/", to: "dashboards#index"
+  end
   resources :users
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show)

@@ -24,3 +24,22 @@
     }
   }
 }
+
+.checkout {
+  margin-bottom: 100px;
+}
+
+a {
+  &.icon-btn {
+    &.main-btn {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      width: 25px;
+      height: 25px;
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+}
