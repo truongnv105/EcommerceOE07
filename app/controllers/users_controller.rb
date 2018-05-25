@@ -2,12 +2,16 @@ class UsersController < ApplicationController
   before_action :logged_in_user, except: %i(new create)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
-  before_action :load_user
+  before_action :load_user, except: %i(new create)
 
   def index; end
 
   def new
     @user = User.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
@@ -15,11 +19,16 @@ class UsersController < ApplicationController
 
     if @user.save
       @user.send_activation_email
-      flash[:info] = t ".check_email"
-      redirect_to root_url
+      respond_to do |format|
+        format.html{redirect_to request.referer || root_path}
+        format.js
+      end
     else
-      flash.now[:danger] = t ".failure"
-      render :new
+      @ajax_error = @user.errors
+      respond_to do |format|
+        format.html{redirect_to request.referer || root_path}
+        format.js
+      end
     end
   end
 

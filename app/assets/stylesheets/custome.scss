@@ -1,6 +1,7 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 @import 'font-awesome';
+@import 'variable';
 
 .product {
   &.product-single {
@@ -42,4 +43,70 @@ a {
       }
     }
   }
+}
+
+.header-account {
+  .dropdown-toggle {
+    &>i {
+      font-size: 15px;
+      margin-right: 3px;
+    }
+  }
+}
+
+.modal-signup, .modal-login {
+  background-color: white;
+  height: 80%;
+  margin: auto;
+  padding-top: 30px;
+  width: 750px;
+  form {
+    margin: auto;
+    width: 80%;
+    input[type="submit"] {
+      margin-top: 20px;
+    }
+  }
+}
+
+.modal {
+  &.modal-login {
+    height: 60%;
+  }
+}
+
+.close-modal {
+  border-radius: 0px;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.red-req {
+  color: $red;
+}
+
+.checkbox_remember {
+  margin-bottom: 0px;
+  input[type="checkbox"] {
+    margin-left: 0px;
+  }
+  span {
+    padding-left: 20px;
+  }
+}
+
+.link_reset {
+  display: inline-block;
+  margin-top: 5px;
+  &:hover {
+    color: $blue;
+    text-decoration: underline;
+  }
+}
+
+.title_signup, .title_login {
+  text-align: center;
 }

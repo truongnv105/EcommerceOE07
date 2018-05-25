@@ -1,0 +1,7 @@
+<% if !flash.now[:success].nil? %>
+  location.reload();
+<% else %>
+  $('.show_error ul').addClass('alert alert-danger');
+  $('.show_error ul').html('<li><%= flash.now[:error] %></li>');
+  $('body').append('<%= j render "shared/end_alert" %>');
+<% end %>
