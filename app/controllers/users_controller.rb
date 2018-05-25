@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create user_params
+
     if @user.save
       @user.send_activation_email
       flash[:info] = t ".check_email"
@@ -26,7 +27,14 @@ class UsersController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @user.update_attributes user_params
+      flash[:success] = t ".profile_updated"
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
 
   def destroy; end
 
@@ -34,13 +42,18 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit :name, :email, :password,
-      :password_confirmation, :phone_number, :address
+    :password_confirmation, :phone_number, :address
   end
 
   def load_user
     @user = User.find_by id: params[:id]
     return if @user
-    flash[:danger] = "<a-suitable-message-here>"
+    flash[:danger] = t ".a_sui_mess"
     redirect_to root_url
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_url unless @user == current_user
   end
 end
