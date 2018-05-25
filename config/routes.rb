@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     post "/", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
     get "/dashboard", to: "dashboards#index"
+    resources :users, only: [:index, :destroy]
   end
   resources :users
   resources :account_activations, only: :edit

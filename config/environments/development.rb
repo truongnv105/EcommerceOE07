@@ -55,4 +55,6 @@ Rails.application.configure do
   host = "localhost:3000"
   config.action_mailer.default_url_options = {host: host, protocol: "https"}
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  config.middleware.use I18n::JS::Middleware
 end

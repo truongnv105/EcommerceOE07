@@ -110,18 +110,3 @@ a {
 .title_signup, .title_login {
   text-align: center;
 }
-
-body.login {
-  background-color: $white;
-  .login_form {
-    margin: auto;
-    width: 40%;
-    input[type="submit"] {
-      width: 100%;
-    }
-    .link_reset {
-      display: inline-block;
-      margin: 7px 0;
-    }
-  }
-}

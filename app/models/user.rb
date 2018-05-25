@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   before_create :create_activation_digest
 
+  scope :user_activated, -> {where("activated = ? AND is_admin = ?", true, false)}
+
+  scope :name_like, -> (search){where("name LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%")}
+
   has_many :comments, dependent: :destroy
   has_many :orders
   has_many :ratings

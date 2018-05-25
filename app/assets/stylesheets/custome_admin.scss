@@ -1,0 +1,80 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'variable';
+
+body {
+  .container {
+    &.body {
+      .right_col {
+        margin: 56px 0 0;
+        float: right;
+      }
+    }
+  }
+  &.nav-md {
+    background-color: $white;
+    .container {
+      &.body {
+        .right_col {
+          width: calc(100% - 230px);
+        }
+      }
+    }
+    .main_container {
+      .top_nav {
+        width: calc(100% - 230px);
+      }
+    }
+  }
+  &.nav-sm {
+    background-color: $white;
+    .container.body {
+      .right_col {
+        width: calc(100% - 70px);
+      }
+    }
+    .main_container {
+      .top_nav {
+        width: calc(100% - 70px);
+      }
+    }
+  }
+  &.login {
+    background-color: $white;
+    .login_form {
+      margin: auto;
+      width: 40%;
+      input[type="submit"] {
+        width: 100%;
+      }
+      .link_reset {
+        display: inline-block;
+        margin: 7px 0;
+      }
+    }
+  }
+  .main_container {
+    .top_nav {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.font_icon {
+  i {
+    font-size: 20px;
+  }
+}
+
+.red-req {
+  color: $red;
+}
+
+button {
+  &.swal2-cancel {
+    background-color: $cancel !important;
+  }
+}
