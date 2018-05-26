@@ -9,7 +9,17 @@ User.create!(
   activated: true,
   activated_at: Time.zone.now
 )
-
+User.create!(
+  name: "Mai Huynh",
+  email: "maimit1798@gmail.com",
+  password: "11111111",
+  password_confirmation: "11111111",
+  phone_number: "1234567890",
+  address: "11111111111111111111111111111111111111111111111111111111",
+  is_admin: true,
+  activated: true,
+  activated_at: Time.zone.now
+)
 30.times do |n|
   name  = "Laptop-#{n+1}"
   describe = "description laptop #{n+1}"

@@ -1,0 +1,4 @@
+$(".comment-<%= @comment.id %>").html("<%= j render @comment %>");
+$(".edit_comment").remove();
+$(".comment-form").html("<%= j render 'shared/comment_form', product: @product, comment: @comment %>");
+$(".comment-text-area").val("");

@@ -1,0 +1,6 @@
+<%= form_for [product, comment], remote: true do |f| %>
+  <%= f.label :content %>
+  <%= f.text_area :content, required: true, class: "form-control comment-text-area" %>
+  <%= f.file_field :picture %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>

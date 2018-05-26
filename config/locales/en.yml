@@ -66,6 +66,15 @@ en:
   profile_user: "Profile User"
   settings: "Settings"
   checkout: "Checkout"
+  create: "Create"
+  delete: "Delete"
+  sure: "You sure?"
+  edit: "Edit"
+  reply: "Reply"
+  content: "Content"
+  product_not_exist: "Product not exist in database"
+  comment_not_exist: "Comment was deleted, you can not perfom action on this comment"
+  type_comment: "press your comment..."
   users:
     new:
       name: "Name:"
@@ -152,3 +161,6 @@ en:
       no_empty: "can't be empty"
       sent_password: "Password has been reset."
       has_expired: "Password reset has expired."
+  comments:
+    create:
+      success: "Create new success comment"

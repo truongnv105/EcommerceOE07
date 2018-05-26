@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20180518070747) do
   create_table "comments", force: :cascade do |t|
     t.text "content"
     t.string "picture"
+    t.integer "parent_id", default: 0
     t.integer "user_id"
     t.integer "product_id"
     t.datetime "created_at", null: false

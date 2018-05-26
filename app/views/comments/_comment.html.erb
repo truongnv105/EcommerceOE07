@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-md-11 comment-row">
+    <p class="comment comment-<%=comment.id%>"> <%= comment.content %>
+      <input type="hidden" name="<%= comment.user.name %>" value="<%= comment.id %>" />
+      <br />
+      <%= time_ago_in_words comment.created_at %> |
+      <% if comment.user == current_user %>
+        <%= link_to t("delete"), product_comment_path(comment.product, comment),
+          method: :delete, remote: true, data: {confirm: t("sure")} %> |
+        <%= link_to t("edit"), edit_product_comment_path(comment.product, comment),
+          remote: true %> |
+      <% end %>
+      <%= link_to t("reply"), "#", remote: true, class: "reply-comment" %>
+      <% @child_comments = Comment.comment_parent(comment.id) %>
+      <% if !@child_comments.nil? %>
+        <div class="row">
+          <div class="col-md-10">
+            <% @child_comments.each do |cmt| %>
+              <p class="comment comment-<%= cmt.id %>"><%= cmt.content %>
+                <input type="hidden" name="<%= cmt.user.name %>" value="<%= cmt.id %>" />
+                <br />
+                <% if cmt.user == current_user %>
+                  <%= link_to t("delete"), product_comment_path(cmt.product, cmt),
+                    method: :delete, remote: true, data: {confirm: t("sure")} %> |
+                  <%= link_to t("edit"), edit_product_comment_path(cmt.product, cmt),
+                    remote: true %> |
+                <% end %>
+                <%= link_to t("reply"), "#", remote: true, class: "reply-comment" %>
+                <hr />
+              </p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </p>
+    <hr />
+  </div>
+</div>

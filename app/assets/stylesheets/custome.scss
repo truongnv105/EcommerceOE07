@@ -110,3 +110,13 @@ a {
 .title_signup, .title_login {
   text-align: center;
 }
+
+.comment-row {
+  margin-left: 50px;
+  p {
+    word-wrap: break-word;
+  }
+  .col-md-10 {
+    margin-left: 50px;
+  }
+}

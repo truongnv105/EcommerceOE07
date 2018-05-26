@@ -111,5 +111,13 @@
         }
       });
     }
+    $(".reply-comment").click(function(){
+      var element = $(this).prevAll("input:first");
+      var comment_id = element.val();
+      var name_comment = "@@" + element.attr("name") + " ";
+      $(".comment-text-area").focus();
+      $(".comment-text-area").val(name_comment);
+      $(".new_comment").children("input").val(comment_id);
+    });
   });
 })(jQuery);

@@ -18,7 +18,13 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show)
-  resources :products
+  resources :products do
+    resources :comments, except: %i(index)
+  end
+  # resources :comments do
+  #   resources :comments, except: %i(index)
+  # end
+
   resources :categories
 
   get "/admin", to: "admins#index"
