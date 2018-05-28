@@ -48,7 +48,7 @@ en:
   nice: "Nice"
   filter_by_price: "Filter by Price"
   screen: "Screen"
-  hard disk: "Hard Disk"
+  harddisk: "Hard Disk"
   sort_by: "Sort By"
   price: "Price"
   rating: "Rating"
@@ -90,14 +90,24 @@ en:
   you_click: "You clicked the button!"
   views:
     pagination:
-      first: "« FIRST"
-      last: "LAST »"
       previous: "‹ PREV"
       next: "NEXT ›"
       truncate: "…"
   my_cart: "My Cart:"
   view_cart: "View Cart"
-  checkout: "Checkout "
+  checkout: "Checkout " 
+  add_product: "Add Product"
+  name: "Name"
+  image: "Image"
+  feature: "Feature"
+  status: "Status"
+  link: "Link"
+  link_cate: "categories"
+  search: "Search"
+  edit: "Edit"
+  image_max: "should be less than 5MB"
+  not_found_cate: "Not found Category"
+  not_found_product: "Not found Product"
   users:
     new:
       name: "Name:"
@@ -189,6 +199,48 @@ en:
         phone: "Phone"
         address: "Address"
         delete: "Delete"
+    products:
+      new:
+        create_product: "Create Product"
+        create: "Create"
+      create:
+        add_success: "Add Product Success"
+      edit:
+        edit_product: "Edit Product"
+        update: "Update"
+      update:
+        update_success: "Update Product Success"
+    categories:
+      new:
+        create_category: "Create Category"
+        create: "Create"
+      create:
+        add_success: "Add Category Success"
+      edit:
+        edit_category: "Edit Category"
+        update: "Update"
+      update:
+        update_success: "Update Category Success"
+      index:
+        add_category: "Add-Category"
+        id: "id"
+        name: "Name"
+        edit: "Edit"
+      show:
+        not_found: "Not found product"
+  layouts:
+    header_admin:
+      admin_shop: "Admin Shop"
+      general: "General"
+      home: "Home"
+      list_users: "List Users"
+      list_categories: "List Categories"
+      categories: "Categories"
+      live_one: "Live On"
+      logout: "Log Out"
+      addtion: "Addtion"
+      add_product: "Add Product"
+      add_categories: "Add Cateogries"
   order_details:
     create:
       buy_cuccessfully: "You just buy new item cussess"

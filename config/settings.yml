@@ -21,3 +21,12 @@ per:
 order_details:
   quantity:
     default: 1
+product:
+  name: 
+    min_length: 6
+  describe: 
+    min_length: 6
+  picture:
+    max_size: 5
+uploader:
+  picture: 300

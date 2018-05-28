@@ -18,6 +18,7 @@ gem "jbuilder", "~> 2.5"
 gem "jquery-rails"
 gem "jquery-slick-rails"
 gem "kaminari"
+gem "mini_magick", "4.7.0"
 gem "puma", "~> 3.0"
 gem "rails", "~> 5.1.6"
 gem "rubocop", "~> 0.5.0", require: false

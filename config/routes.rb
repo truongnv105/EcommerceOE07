@@ -18,6 +18,8 @@ Rails.application.routes.draw do
     delete "/logout", to: "sessions#destroy"
     get "/dashboard", to: "dashboards#index"
     resources :users, only: [:index, :destroy]
+    resources :categories, except: :destroy
+    resources :products, except: %i(index show destroy)
   end
   resources :users
   resources :account_activations, only: :edit
