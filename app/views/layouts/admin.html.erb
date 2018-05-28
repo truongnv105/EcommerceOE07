@@ -10,7 +10,19 @@
     <%= javascript_include_tag "admin/admin", "data-turbolinks-track": "reload" %>
     <%= render "layouts/shim" %>
   </head>
-  <body class="nav-md">
-    <%= render "layouts/header_admin" %>
-  </body>
+  <% if !logged_in_admin? %>
+    <body class="login">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
+    </body>
+  <% else %>
+    <body class="nav-md">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= render "layouts/header_admin" %>
+    </body>
+  <% end %>
 </html>

@@ -1,0 +1,13 @@
+<div class="login_form">
+  <h1 class="text-center">Login</h1>
+  <%= form_for(:session, url: admin_path) do |f| %>
+    <%= f.label :email, t(".email") %> <span class="red-req">*</span>
+    <%= f.email_field :email, class: "form-control" %>
+
+    <%= f.label :password, t(".password") %> <span class="red-req">*</span>
+    <%= f.password_field :password, class: "form-control" %>
+    <%= link_to t(".reset_password"), new_password_reset_path, class: "link_reset" %>
+
+    <%= f.submit t(".login"), class: "btn btn-primary" %>
+  <% end %>
+</div>

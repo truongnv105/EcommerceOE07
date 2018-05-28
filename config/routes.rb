@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   get "/checkout", to: "order_details#checkout"
 
   namespace :admin do
-    get "/", to: "dashboards#index"
+    get "/", to: "sessions#new"
+    post "/", to: "sessions#create"
+    delete "/logout", to: "sessions#destroy"
+    get "/dashboard", to: "dashboards#index"
   end
   resources :users
   resources :account_activations, only: :edit

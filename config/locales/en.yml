@@ -66,6 +66,11 @@ en:
   profile_user: "Profile User"
   settings: "Settings"
   checkout: "Checkout"
+  hack_page: "Are you going to hack our page"
+  invalid_login: "Email or Password is invalid"
+  settings: "Settings"
+  logout: "Log Out"
+  please_login: "Please Login !"
   users:
     new:
       name: "Name:"
@@ -152,3 +157,9 @@ en:
       no_empty: "can't be empty"
       sent_password: "Password has been reset."
       has_expired: "Password reset has expired."
+  admin:
+    sessions:
+      new:
+        login: "Login"
+        email: "Email:"
+        password: "Password:"
