@@ -3,9 +3,9 @@ class Cart
 
   def initialize product_id, name, price, picture, quantity
     @product_id = product_id
-    @price = price
-    @image = picture
     @name = name
+    @price = price
+    @picture = picture
     @quantity = quantity
   end
 end

@@ -1,6 +1,13 @@
 class CartsController < ApplicationController
   before_action :load_product, only: :create
 
+  def index
+    if session[:order_id]
+      current_order
+      total_cart
+    end
+  end
+
   def create
     unless session[:order_id].present?
       session[:order_id] = []
@@ -22,6 +29,29 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       format.html {redirect_to root_url}
+      format.js
+    end
+  end
+
+  def update
+    session[:order_id].each do |item|
+      if item["product_id"] == params[:id].to_i
+        item["quantity"] = params["quantity"].to_i
+        @sub_price = item["quantity"].to_i * item["price"].to_f
+      end
+    end
+    total_cart
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def destroy
+    session[:order_id].delete_if{|item| item["product_id"] == params[:id].to_i}
+    total_cart
+
+    respond_to do |format|
       format.js
     end
   end

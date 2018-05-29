@@ -1,0 +1,80 @@
+<div id="breadcrumb">
+  <div class="container">
+    <ul class="breadcrumb">
+      <li>
+        <%= link_to t(".home"), root_url %>
+      </li>
+      <li class="active"><%= t ".checkout" %></li>
+    </ul>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 checkout">
+        <form id="checkout-form" class="clearfix">
+          <div class="order-summary clearfix">
+            <div class="section-title">
+              <h3 class="title"><%= t "order_review" %></h3>
+            </div>
+            <table class="shopping-cart-table table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th><%= t ".product" %></th>
+                  <th class="text-center"><%= t ".price" %></th>
+                  <th class="text-center"><%= t ".quantity" %></th>
+                  <th class="text-center"><%= t ".total" %></th>
+                  <th class="text-right"></th>
+                </tr>
+              </thead>
+              <tbody>
+              <% if @current_order %>
+                <% @current_order.each do |cart_item| %>
+                  <tr>
+                    <td class="thumb"><%= image_tag cart_item["picture"] %></td>
+                    <td class="details">
+                      <%= link_to cart_item["name"], product_path(cart_item["product_id"]) %>
+                    </td>
+                    <td class="price text-center">
+                      <strong><%= cart_item["price"] %></strong>
+                    </td>
+                    <td class="qty text-center">
+                      <input type="hidden" value="<%= cart_item['product_id'] %>" />
+                      <input class="input" type="number"
+                        value="<%= cart_item['quantity']%>" min="1" />
+                    </td>
+                    <td class="total text-center">
+                      <strong class="primary-color price-item-<%= cart_item['product_id'] %>">
+                        <%= cart_item["quantity"] * cart_item["price"].to_f %>
+                      </strong>
+                    </td>
+                    <td class="text-right">
+                      <%= link_to cart_path(cart_item["product_id"]), method: :delete,
+                        remote: true, data: {confirm: t("sure")},
+                          class: "main-btn icon-btn cart-item" do %>
+                        <i class="fa fa-close"></i>
+                      <% end %>
+                    </td>
+                  </tr>
+                <% end %>
+              <% end %>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="1"><%= t ".total" %></th>
+                  <th colspan="5" class="total total-price">
+                    <%= @total_price %>
+                  </th>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="pull-right">
+              <button class="primary-btn"><%= t ".place_order" %></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
