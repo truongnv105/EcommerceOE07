@@ -94,7 +94,10 @@ en:
       last: "LAST »"
       previous: "‹ PREV"
       next: "NEXT ›"
-      truncate: "…" 
+      truncate: "…"
+  my_cart: "My Cart:"
+  view_cart: "View Cart"
+  checkout: "Checkout "
   users:
     new:
       name: "Name:"
@@ -152,6 +155,8 @@ en:
       laptop_collection: "Laptop Product Collection"
       mobile_collection: "Mobile Product Collection"
       icon_hot: "icon hot"
+      alt_image: "item"
+      shop_now: "Shop Now"
   password_resets:
     new:
       password_reset: "Forgot password"
@@ -184,3 +189,6 @@ en:
         phone: "Phone"
         address: "Address"
         delete: "Delete"
+  order_details:
+    create:
+      buy_cuccessfully: "You just buy new item cussess"

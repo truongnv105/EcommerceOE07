@@ -24,6 +24,6 @@ Rails.application.routes.draw do
   resources :password_resets, except: %i(index show)
   resources :products
   resources :categories
-
-  get "/admin", to: "admins#index"
+  resources :carts
+  resources :orders
 end

@@ -1,156 +1,161 @@
 <div id="home">
-	<div class="container">
-		<div class="home-wrap">
-			<div id="home-slick">
-				<div class="banner banner-1">
-					<%= image_tag("Slider1.jpg", :alt => t(".image_slider")) %>
-					<div class="banner-caption text-center">
-						<h1 class="white-color font-weak"><%= t ".laptop_collection" %></h1>
-						<%= link_to "Shop Now", admin_path, class: "primary-btn" %>
-					</div>
-				</div>
-				<div class="banner banner-1">
-					<%= image_tag("Slider2.jpg", :alt => t(".image_slider")) %>
-					<div class="banner-caption">
-						<h1 class="white-color font-weak"><%= t ".laptop_collection" %></h1>
-						<%= link_to "Shop Now", admin_path, class: "primary-btn" %>
-					</div>
-				</div>
-				<div class="banner banner-1">
-					<%= image_tag("Slider3.jpg", :alt => t(".image_slider")) %>
-					<div class="banner-caption">
-						<h1 class="white-color font-weak"><%= t ".mobile_collection" %></h1>
-						<%= link_to "Shop Now", admin_path, class: "primary-btn" %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="home-wrap">
+      <div id="home-slick">
+        <div class="banner banner-1">
+          <%= image_tag "Slider1.jpg", alt: t(".image_slider") %>
+          <div class="banner-caption text-center">
+            <h1 class="white-color font-weak"><%= t ".laptop_collection" %></h1>
+            <%= link_to t(".shop_now"), admin_path, class: "primary-btn" %>
+          </div>
+        </div>
+        <div class="banner banner-1">
+          <%= image_tag "Slider2.jpg", alt: t(".image_slider") %>
+          <div class="banner-caption">
+            <h1 class="white-color font-weak"><%= t ".laptop_collection" %></h1>
+            <%= link_to t(".shop_now"), admin_path, class: "primary-btn" %>
+          </div>
+        </div>
+        <div class="banner banner-1">
+          <%= image_tag "Slider3.jpg", alt: t(".image_slider") %>
+          <div class="banner-caption">
+            <h1 class="white-color font-weak"><%= t ".mobile_collection" %></h1>
+            <%= link_to t(".shop_now"), admin_path, class: "primary-btn" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-title">
-					<h2 class="title">
-						<%= image_tag("hot-icon.gif", :alt => t(".icon_hot")) %>
-					</h2>
-					<div class="pull-right">
-						<div class="product-slick-dots-2 custom-dots">
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12 col-sm-6 col-xs-6">
-				<div class="row">
-					<div id="product-slick-2" class="product-slick">
-						<% @product_hot.each do |x| %>
-						<div class="product product-single">
-							<div class="product-thumb">
-								<%= link_to(image_tag(x.picture, :alt => "rss feed"), "/admin") %>
-							</div>
-							<div class="product-body">
-								<h3 class="product-price">
-									<%= number_to_currency(x.price, unit: "VND", precision: 0, format: "%n %u") %>
-									</h3>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o empty"></i>
-								</div>
-								<h2 class="product-name"><%= link_to x.name, "/admin" %></h2>
-								<div class="product-btns">
-									<%= link_to "/admin", class: "primary-btn add-to-cart" do  %>
-										<i class="fa fa-shopping-cart"></i>
-										<%= t "add_to_cart" %>
-									<% end %>
-								</div>
-							</div>
-						</div>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2 class="title">
+            <%= image_tag "hot-icon.gif", alt: t(".icon_hot") %>
+          </h2>
+          <div class="pull-right">
+            <div class="product-slick-dots-2 custom-dots">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-sm-6 col-xs-6">
+        <div class="row">
+          <div id="product-slick-2" class="product-slick">
+            <% @product_hot.each do |product| %>
+            <div class="product product-single">
+              <div class="product-thumb">
+                <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+              </div>
+              <div class="product-body">
+                <h3 class="product-price">
+                  <%= number_to_currency(product.price, unit: "VND",
+                    precision: 0, format: "%n %u") %>
+                  </h3>
+                <div class="product-rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o empty"></i>
+                </div>
+                <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+                <div class="product-btns">
+                  <%= link_to carts_path(product_id: product.id),
+                    method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
+                    <i class="fa fa-shopping-cart"></i>
+                    <%= t "add_to_cart" %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="section">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-title">
-					<h2 class="title">
-						<%= image_tag("new-icon.png", :alt => t(".icon_hot")) %>
-					</h2>
-				</div>
-			</div>
-			<% @product_new.each do |x| %>
-			<div class="col-md-3 col-sm-6 col-xs-6">
-				<div class="product product-single">
-					<div class="product-thumb">
-						<%= link_to(image_tag(x.picture, :alt => "rss feed"), "/admin") %>
-					</div>
-					<div class="product-body">
-						<h3 class="product-price">
-							<%= number_to_currency(x.price, unit: "VND", precision: 0, format: "%n %u") %>
-							</h3>
-						<div class="product-rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-o empty"></i>
-						</div>
-						<h2 class="product-name"><%= link_to x.name, "/admin" %></h2>
-						<div class="product-btns">
-							<%= link_to "/admin", class: "primary-btn add-to-cart" do  %>
-								<i class="fa fa-shopping-cart"></i>
-								<%= t "add_to_cart" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-			<% end %>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="section-title">
-					<h2 class="title">
-						<%= image_tag("cheap-icon.png", :alt => t(".icon_hot")) %>
-					</h2>
-				</div>
-			</div>
-			<% @product_cheap.each do |x| %>
-			<div class="col-md-3 col-sm-6 col-xs-6">
-				<div class="product product-single">
-					<div class="product-thumb">
-						<%= link_to(image_tag(x.picture, :alt => "rss feed"), "/admin") %>
-					</div>
-					<div class="product-body">
-						<h3 class="product-price">
-							<%= number_to_currency(x.price, unit: "VND", precision: 0, format: "%n %u") %>
-						</h3>
-						<div class="product-rating">
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star"></i>
-							<i class="fa fa-star-o empty"></i>
-						</div>
-						<h2 class="product-name"><%= link_to x.name, "/admin" %></h2>
-						<div class="product-btns">
-							<%= link_to "/admin", class: "primary-btn add-to-cart" do  %>
-								<i class="fa fa-shopping-cart"></i>
-								<%= t "add_to_cart" %>
-							<% end %>
-						</div>
-					</div>
-				</div>
-			</div>
-			<% end %>
-		</div>
-	</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2 class="title">
+            <%= image_tag "new-icon.png", alt: t(".icon_hot") %>
+          </h2>
+        </div>
+      </div>
+      <% @product_new.each do |product| %>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="product product-single">
+          <div class="product-thumb">
+            <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+          </div>
+          <div class="product-body">
+            <h3 class="product-price">
+              <%= number_to_currency(product.price, unit: "VND",
+                precision: 0, format: "%n %u") %>
+              </h3>
+            <div class="product-rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-o empty"></i>
+            </div>
+            <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+            <div class="product-btns">
+              <%= link_to carts_path(product_id: product.id),
+                method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
+                <i class="fa fa-shopping-cart"></i>
+                <%= t "add_to_cart" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="section-title">
+          <h2 class="title">
+            <%= image_tag "cheap-icon.png", alt: t(".icon_hot") %>
+          </h2>
+        </div>
+      </div>
+      <% @product_cheap.each do |product| %>
+        <div class="col-md-3 col-sm-6 col-xs-6">
+          <div class="product product-single">
+            <div class="product-thumb">
+              <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+            </div>
+            <div class="product-body">
+              <h3 class="product-price">
+                <%= number_to_currency(product.price, unit: "VND", precision: 0, format: "%n %u") %>
+              </h3>
+              <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o empty"></i>
+              </div>
+              <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+              <div class="product-btns">
+                <%= link_to carts_path(product_id: product.id),
+                  method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
+                  <i class="fa fa-shopping-cart"></i>
+                  <%= t "add_to_cart" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>

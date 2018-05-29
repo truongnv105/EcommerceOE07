@@ -18,3 +18,6 @@ products:
     min_length: 20
 per:
   limit_page: 10
+order_details:
+  quantity:
+    default: 1

@@ -67,7 +67,15 @@
             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
             <div class="header-btns-icon">
               <i class="fa fa-shopping-cart"></i>
-              <span class="qty"></span>
+              <span class="qty">
+                <% quantity = 0 %>
+                <% if !session[:order_id].nil? %>
+                  <% session[:order_id].each do |order| %>
+                    <% quantity += order["quantity"]  %>
+                  <% end %>
+                <% end %>
+                <%= quantity %>
+                </span>
             </div>
             <strong class="text-uppercase"><%= t "my_cart" %></strong>
             <br>
@@ -86,6 +94,12 @@
                     <button class="cancel-btn"><i class="fa fa-trash"></i></button>
                   </div>
                 </div>
+              </div>
+              <div class="shopping-cart-btns">
+                <button class="main-btn"><%= t "view_cart" %></button>
+                <button class="primary-btn">
+                  <%= t "checkout" %><i class="fa fa-arrow-circle-right"></i>
+                </button>
               </div>
             </div>
           </li>
