@@ -11,6 +11,10 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery_ujs
+//= require sweetalert2
 //= require bootstrap
 //= require admin_cus/custom.js
+//= require i18n
+//= require i18n.js
+//= require i18n/translations

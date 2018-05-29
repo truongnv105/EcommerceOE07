@@ -1,4 +1,16 @@
 en:
+  sessions:
+    new:
+      email: "Email:"
+      password: "Password:"
+      login: "Login"
+      remember_me: "Remember me on this computer."
+      remember: "Remember me"
+      reset_password: "Lost your password ?"
+    create:
+      success: "Welcome to..,."
+      fail: "Email/password in valid"
+      message: "Account not activated. Check your email for the activation link"
   menu: "Menu"
   home: "Home"
   pc: "PC"
@@ -71,6 +83,18 @@ en:
   settings: "Settings"
   logout: "Log Out"
   please_login: "Please Login !"
+  search: "Search"
+  alert_confirm: "You won't be able to revert this!"
+  yes_delete: "Yes, delete it"
+  delete_success: "Delete Success"
+  you_click: "You clicked the button!"
+  views:
+    pagination:
+      first: "« FIRST"
+      last: "LAST »"
+      previous: "‹ PREV"
+      next: "NEXT ›"
+      truncate: "…" 
   users:
     new:
       name: "Name:"
@@ -128,18 +152,6 @@ en:
       laptop_collection: "Laptop Product Collection"
       mobile_collection: "Mobile Product Collection"
       icon_hot: "icon hot"
-  sessions:
-    new:
-      email: "Email:"
-      password: "Password:"
-      login: "Login"
-      remember_me: "Remember me on this computer."
-      remember: "Remember me"
-      reset_password: "Lost your password ?"
-    create:
-      success: "Welcome to..,."
-      fail: "Email/password in valid"
-      message: "Account not activated. Check your email for the activation link"
   password_resets:
     new:
       password_reset: "Forgot password"
@@ -163,3 +175,12 @@ en:
         login: "Login"
         email: "Email:"
         password: "Password:"
+    users:
+      index:
+        you_sure: "Are you sure?"
+        list_user: "List all User"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        address: "Address"
+        delete: "Delete"
