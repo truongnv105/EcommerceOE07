@@ -56,4 +56,8 @@ $(document).ready(function() {
       }, 1000);
     });
   };
+
+  if($('.right_col').height() < $(window).height()){
+    $('.right_col').css('height', $(window).height());
+  }
 });

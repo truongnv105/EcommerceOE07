@@ -5,6 +5,7 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def new
     @product = Product.new
+    @product.images.build
   end
 
   def create
@@ -22,7 +23,7 @@ class Admin::ProductsController < Admin::ApplicationController
   def update
     if @product.update_attributes product_params
       flash[:success] = t ".update_success"
-      redirect_to admin_category_path @product.category_id
+      redirect_to admin_category_path @product.category
     else
       render :edit
     end
@@ -31,7 +32,8 @@ class Admin::ProductsController < Admin::ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :describe, :price, :picture, :discount, :feature, :RAM, :screen, :hard_disk, :status, :category_id)
+    params.require(:product).permit(:name, :describe, :price, :discount,
+      :feature, :RAM, :screen, :hard_disk, :status, :category_id, images_attributes: [:id, :picture, :_destroy])
   end
 
   def load_categories

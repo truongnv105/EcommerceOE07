@@ -1,0 +1,17 @@
+<div class="nested-fields">
+  <div class="inline">
+    <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+  </div>
+  <div class="inline wd-80">
+    <% if f.object.persisted? %>
+      <% if f.object.picture.present? %>
+        <%= image_tag f.object.picture, size: Settings.update_picture.max_size %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="inline">
+    <%= link_to_remove_association f do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    <% end %>
+  </div>
+</div>
