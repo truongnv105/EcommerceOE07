@@ -29,15 +29,6 @@ ActiveRecord::Schema.define(version: 20180529062311) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "list_categories", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "category_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_list_categories_on_category_id"
-    t.index ["product_id"], name: "index_list_categories_on_product_id"
-  end
-
   create_table "order_details", force: :cascade do |t|
     t.integer "product_id"
     t.integer "order_id"
@@ -66,9 +57,11 @@ ActiveRecord::Schema.define(version: 20180529062311) do
     t.string "RAM"
     t.string "screen"
     t.string "hard_disk"
-    t.boolean "status"
+    t.boolean "status", default: true
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["name"], name: "index_products_on_name"
     t.index ["price"], name: "index_products_on_price"
   end

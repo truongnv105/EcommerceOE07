@@ -19,9 +19,6 @@
     </body>
   <% else %>
     <body class="nav-md">
-      <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
-      <% end %>
       <%= render "layouts/header_admin" %>
     </body>
   <% end %>

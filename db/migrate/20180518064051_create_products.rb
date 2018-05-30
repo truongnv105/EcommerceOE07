@@ -1,7 +1,7 @@
 class CreateProducts < ActiveRecord::Migration[5.0]
   def change
     create_table :products do |t|
-      t.string :name
+      t.string :name, unique: true
       t.text :describe
       t.decimal :price, precision: 9, scale: 2
       t.string :picture
@@ -10,7 +10,8 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.string :RAM
       t.string :screen
       t.string :hard_disk
-      t.boolean :status
+      t.boolean :status, default: 1
+      t.references :category, foreign_key: true
 
       t.timestamps
     end
