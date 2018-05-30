@@ -5,6 +5,9 @@
 
 .product {
   &.product-single {
+    &:hover {
+      border: 1px solid $red;
+    }
     .product-btns {
       .primary-btn {
         width: 80%;
@@ -13,7 +16,7 @@
     .product-thumb {
       &>a {
         display: block;
-        height: 300px;
+        min-height: 250px;
       }
     }
   }
@@ -144,5 +147,40 @@ a {
   }
   h2 {
     color: $blue;
+  }
+}
+
+.header-search {
+  form {
+    input {
+      height: 40px;
+      padding-left: 10px;
+      width: 250px;
+    }
+  }
+}
+
+.list_product {
+  padding-top: 20px;
+  &>.row {
+    &>[class*="col-"]:nth-child(4n + 5) {
+      clear: both;
+    }
+  }
+}
+
+.filter {
+  form {
+    margin: 20px 0;
+    input[type="submit"] {
+      background-color: $blue;
+      border: 0px;
+      color: $white;
+      margin-left: 10px;
+      padding: 3px 25px;
+      &:hover {
+        background-color: $green;
+      }
+    }
   }
 }

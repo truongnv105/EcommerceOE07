@@ -39,7 +39,7 @@
       <%= f.select :status, Product.statuses.keys, {} %>
 
       <%= f.label :category_id, t("category_id") %>
-      <%= f.select :category_id, @categories.map {|c| [c.name, c.id]} %>
+      <%= f.select :category_id, @categories_menu.map {|c| [c.name, c.id]} %>
 
       <%= f.submit yield(:button), class: "btn btn-primary" %>
     <% end %>

@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :load_product, only: :create
+  before_action :load_menu, only: :index
 
   def index
     if session[:order_id]
@@ -64,5 +65,9 @@ class CartsController < ApplicationController
   def load_product
     @product = Product.find_by id: params[:product_id]
     redirect_to root unless @product
+  end
+
+  def load_menu
+    @categories_menu = Category.select :id, :name
   end
 end

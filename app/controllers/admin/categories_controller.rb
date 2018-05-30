@@ -1,10 +1,9 @@
 class Admin::CategoriesController < Admin::ApplicationController
   before_action :logged_in_user_admin
   before_action :load_category, only: %i(show edit update)
+  before_action :load_menu, only: %i(index show new edit)
 
-  def index
-    @categories = Category.follow_created_at
-  end
+  def index; end
 
   def show
     @products = @category.products.name_like(params[:product_search]).
@@ -48,4 +47,9 @@ class Admin::CategoriesController < Admin::ApplicationController
       flash[:warning] = t "not_found_cate"
       redirect_to admin_categories_path
   end
+
+  def load_menu
+    @categories_menu = Category.select :id, :name
+  end
+
 end

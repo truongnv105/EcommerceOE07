@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user, only: %i(create update)
+  before_action :load_menu, only: %i(index show)
 
   def index
     @orders = current_user.orders.all_order
@@ -35,5 +36,9 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:status,
       order_details_attributes: [:id, :product_id, :quantity, :_destroy])
+  end
+
+  def load_menu
+    @categories_menu = Category.select :id, :name
   end
 end

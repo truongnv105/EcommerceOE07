@@ -751,8 +751,6 @@ textarea.input {
 .product.product-single {
   margin-top: 15px;
   margin-bottom: 15px;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
 }
 
 .product.product-single:hover {
@@ -782,7 +780,7 @@ textarea.input {
 
 .product.product-single .product-rating {
   float: right;
-  margin-top: 5px;
+  margin-top: -3px;
 }
 
 .product.product-single .product-name {
@@ -1588,10 +1586,6 @@ textarea.input {
 [dir='rtl'] .slick-slide
 {
   float: right;
-}
-.slick-slide img
-{
-  display: block;
 }
 .slick-slide.slick-loading img
 {

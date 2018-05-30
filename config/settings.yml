@@ -19,6 +19,8 @@ products:
 per:
   limit_page: 10
   limit_filter: 9
+  product:
+    limit_page: 12
 order_details:
   quantity:
     default: 1
@@ -29,6 +31,7 @@ product:
     min_length: 6
   picture:
     max_size: 5
+    size: 200
 uploader:
   picture: 300
 inputs:
