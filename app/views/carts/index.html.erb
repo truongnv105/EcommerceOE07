@@ -69,11 +69,13 @@
                 </tr>
               </tfoot>
             </table>
-            <div class="pull-right">
-              <button class="primary-btn"><%= t ".place_order" %></button>
-            </div>
           </div>
         </form>
+        <div class="pull-right form-order">
+          <% if @current_order %>
+            <%= render "orders/order_form", order: @order %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

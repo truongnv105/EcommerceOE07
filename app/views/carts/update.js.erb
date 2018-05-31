@@ -1,3 +1,5 @@
 $('.total-quantity').html('<%= @total_cart %>');
-$('.total-price').html("<%= @total_price %>");
-$('.price-item-<%= params[:id]%>').html("<%= @sub_price %>");
+$('.total-price').html('<%= @total_price %>');
+$('.price-item-<%= params[:id]%>').html('<%= @sub_price %>');
+$('.new_order').remove();
+$('.form-order').html('<%= j render "orders/order_form", order: @order %>');
