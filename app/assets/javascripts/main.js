@@ -111,5 +111,14 @@
         }
       });
     }
+    $(".input").change(function(){
+      var quantity = $(this).val();
+      var product_id = $(this).prev("input").val();
+      $.ajax({
+        url: "carts/" + product_id,
+        method: "put",
+        data: {quantity: quantity}
+      });
+    });
   });
 })(jQuery);

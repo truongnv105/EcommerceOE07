@@ -88,6 +88,7 @@ en:
   yes_delete: "Yes, delete it"
   delete_success: "Delete Success"
   you_click: "You clicked the button!"
+  sure: "You sure?"
   views:
     pagination:
       previous: "‹ PREV"
@@ -244,3 +245,12 @@ en:
   order_details:
     create:
       buy_cuccessfully: "You just buy new item cussess"
+  carts:
+    index:
+      home: "Home"
+      place_order: "PLACE ORDER"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      order_review: "Order Review"
+      total: "TOTAL"

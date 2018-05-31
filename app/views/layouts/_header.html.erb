@@ -67,7 +67,7 @@
             <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
             <div class="header-btns-icon">
               <i class="fa fa-shopping-cart"></i>
-              <span class="qty">
+              <span class="qty total-quantity">
                 <% quantity = 0 %>
                 <% if !session[:order_id].nil? %>
                   <% session[:order_id].each do |order| %>
@@ -97,9 +97,10 @@
               </div>
               <div class="shopping-cart-btns">
                 <button class="main-btn"><%= t "view_cart" %></button>
-                <button class="primary-btn">
-                  <%= t "checkout" %><i class="fa fa-arrow-circle-right"></i>
-                </button>
+                <%= link_to carts_path, class: "primary-btn" do %>
+                  <%= t("checkout") %>
+                  <i class="fa fa-arrow-circle-right"></i>
+                <% end %>
               </div>
             </div>
           </li>
