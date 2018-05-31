@@ -23,6 +23,8 @@ class Product < ApplicationRecord
     end
   }
 
+  scope :filter, ->(min, max){where("price > ? and price < ?", min, max)}
+
   private
 
   def picture_size

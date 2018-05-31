@@ -1,5 +1,6 @@
 <div id="home">
   <div class="container">
+    <%= render "shared/form_filter" %>
     <div class="home-wrap">
       <div id="home-slick">
         <div class="banner banner-1">
@@ -27,6 +28,7 @@
     </div>
   </div>
 </div>
+<div class="result"></div>
 <div class="section">
   <div class="container">
     <div class="row">
@@ -44,14 +46,14 @@
       <div class="col-md-12 col-sm-6 col-xs-6">
         <div class="row">
           <div id="product-slick-2" class="product-slick">
-            <% @product_hot.each do |product| %>
+            <% @supports.hot_products.each do |product| %>
             <div class="product product-single">
               <div class="product-thumb">
-                <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+                <%= link_to image_tag(product.picture, alt: t(".alt_image")), admin_path %>
               </div>
               <div class="product-body">
                 <h3 class="product-price">
-                  <%= number_to_currency(product.price, unit: "VND",
+                  <%= number_to_currency(product.price, unit: t("vnd"),
                     precision: 0, format: "%n %u") %>
                   </h3>
                 <div class="product-rating">
@@ -61,7 +63,7 @@
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star-o empty"></i>
                 </div>
-                <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+                <h2 class="product-name"><%= link_to product.name, admin_path %></h2>
                 <div class="product-btns">
                   <%= link_to carts_path(product_id: product.id),
                     method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
@@ -88,15 +90,15 @@
           </h2>
         </div>
       </div>
-      <% @product_new.each do |product| %>
+      <% @supports.new_products.each do |product| %>
       <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="product product-single">
           <div class="product-thumb">
-            <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+            <%= link_to image_tag(product.picture, alt: t(".alt_image")), admin_path %>
           </div>
           <div class="product-body">
             <h3 class="product-price">
-              <%= number_to_currency(product.price, unit: "VND",
+              <%= number_to_currency(product.price, unit: t("vnd"),
                 precision: 0, format: "%n %u") %>
               </h3>
             <div class="product-rating">
@@ -106,7 +108,7 @@
               <i class="fa fa-star"></i>
               <i class="fa fa-star-o empty"></i>
             </div>
-            <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+            <h2 class="product-name"><%= link_to product.name, admin_path %></h2>
             <div class="product-btns">
               <%= link_to carts_path(product_id: product.id),
                 method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
@@ -127,15 +129,15 @@
           </h2>
         </div>
       </div>
-      <% @product_cheap.each do |product| %>
+      <% @supports.cheap_products.each do |product| %>
         <div class="col-md-3 col-sm-6 col-xs-6">
           <div class="product product-single">
             <div class="product-thumb">
-              <%= link_to image_tag(product.picture, alt: t(".alt_image")), "/admin" %>
+              <%= link_to image_tag(product.picture, alt: t(".alt_image")), admin_path %>
             </div>
             <div class="product-body">
               <h3 class="product-price">
-                <%= number_to_currency(product.price, unit: "VND", precision: 0, format: "%n %u") %>
+                <%= number_to_currency product.price, unit: t("vnd"), precision: 0, format: "%n %u" %>
               </h3>
               <div class="product-rating">
                 <i class="fa fa-star"></i>
@@ -144,7 +146,7 @@
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star-o empty"></i>
               </div>
-              <h2 class="product-name"><%= link_to product.name, "/admin" %></h2>
+              <h2 class="product-name"><%= link_to product.name, admin_path %></h2>
               <div class="product-btns">
                 <%= link_to carts_path(product_id: product.id),
                   method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
