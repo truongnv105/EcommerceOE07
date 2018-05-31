@@ -5,6 +5,7 @@ class CartsController < ApplicationController
     if session[:order_id]
       current_order
       total_cart
+      init_order
     end
   end
 
@@ -41,6 +42,7 @@ class CartsController < ApplicationController
       end
     end
     total_cart
+    init_order
 
     respond_to do |format|
       format.js
@@ -50,6 +52,7 @@ class CartsController < ApplicationController
   def destroy
     session[:order_id].delete_if{|item| item["product_id"] == params[:id].to_i}
     total_cart
+    init_order
 
     respond_to do |format|
       format.js

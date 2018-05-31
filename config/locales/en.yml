@@ -96,7 +96,7 @@ en:
       truncate: "…"
   my_cart: "My Cart:"
   view_cart: "View Cart"
-  checkout: "Checkout " 
+  checkout: "Checkout "
   add_product: "Add Product"
   name: "Name"
   image: "Image"
@@ -109,6 +109,7 @@ en:
   image_max: "should be less than 5MB"
   not_found_cate: "Not found Category"
   not_found_product: "Not found Product"
+  place_order: "Place order"
   users:
     new:
       name: "Name:"
@@ -254,3 +255,20 @@ en:
       quantity: "Quantity"
       order_review: "Order Review"
       total: "TOTAL"
+  orders:
+    create:
+      success: "You have just ordered success!"
+    update:
+      cancel_success: "Cancel order success, thank you"
+    index:
+      number_order: "No of Order"
+      date: "Date"
+      status: "Status Order"
+    show:
+      product: "Product"
+      order_date: "Order Date"
+      quantity: "Quantity"
+      cancel: "Cancel"
+  dates:
+    formats:
+      date_month_year: "%d/%m/%y"

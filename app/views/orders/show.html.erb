@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="order">
+      <tr>
+        <th><%= t ".product" %></th>
+        <th><%= t ".order_date" %></th>
+        <th><%= t ".quantity" %></th>
+      </tr>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= link_to item.product_id, product_path(item.product_id) %></td>
+          <td><%= l item.created_at, format: :short %></td>
+          <td><%= image_tag item.quantity %></td>
+        </tr>
+      <% end %>
+    </table>
+    <% if @order.pending? %>
+      <%= form_for @order do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :status, value: :cancel %>
+        <%= f.submit t(".cancel") %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
