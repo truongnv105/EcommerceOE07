@@ -1,0 +1,12 @@
+<% if flash.now[:notice] %>
+  $('.rating_success p').remove();
+  $('.rating_success').
+    append('<p class="alert alert-success"><%= flash.now[:notice] %>'
+      + ' <%= params[:rating][:rate] %> <%= t "star" %></p>');
+  $('.total-star').html('<%= "%.1f" % @rate %> <i class="fa fa-star"></i>');
+  $('input[name="rating[rate]"]:radio').attr('checked',false);
+<% else %>
+  $('.rating_success').
+    append('<p class="alert alert-danger"><%= flash.now[:danger] %>');
+<% end %>
+$('.rating_success p').fadeOut(2000);

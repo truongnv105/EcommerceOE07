@@ -43,7 +43,7 @@
       fade: true
     });
 
-  $('#product-slick-2').slick({
+    $('#product-slick-2').slick({
       slidesToShow: 4,
       slidesToScroll: 2,
       autoplay: true,
@@ -77,19 +77,7 @@
       dots: false,
       arrows: true,
       fade: true,
-      asNavFor: '#product-view',
     });
-
-    $('#product-view').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      centerMode: true,
-      focusOnSelect: true,
-      asNavFor: '#product-main-view',
-    });
-
-    $('#product-main-view .product-view').zoom();
 
     var slider = document.getElementById('price-slider');
     if (slider) {
@@ -143,5 +131,15 @@
       $("input.value-sort").val(sort);
       $(".filter").click();
     });
+
+    $('input[name="rating[rate]"]:radio').change(function(){
+      setTimeout(function(){
+        $('.star_button').click();
+      },300);
+    });
+
+    setTimeout(function(){
+      $('body').find('.alert').remove();
+    },3000);
   });
 })(jQuery);

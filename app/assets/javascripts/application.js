@@ -17,3 +17,6 @@
 //= require jquery.zoom.min
 //= require nouislider.min
 //= require main
+//= require i18n
+//= require i18n.js
+//= require i18n/translations

@@ -34,15 +34,10 @@ en:
   category: "Category"
   product_name: "Product Name Goes Here"
   new: "New"
-  review_add: "3 Review(s) / Add Review"
-  availability: "Availability:"
-  in_stock: "In Stock"
-  brand: "Brand:"
-  e_shop: "E-SHOP"
   ram: "Ram"
   color: "Color"
   qty: "QTY"
-  description: "Description"
+  description: "Description: "
   details: "Details"
   review: "Review"
   nice: "Nice"
@@ -118,6 +113,15 @@ en:
   floor: "Floor: "
   ceil: "Ceil: "
   picture_blank: "picture can't be blank"
+  product_not: "Product not exists!"
+  detail: "Product Detail"
+  review_success: "review success"
+  rating_login: "Please Login to Rating Product... "
+  star: "stars for Product"
+  ratings:
+    create:
+      thank_you: "Thank you for your review"
+      please_choice: "Please select one star before review"
   users:
     new:
       name: "Name:"
@@ -194,6 +198,13 @@ en:
       no_empty: "can't be empty"
       sent_password: "Password has been reset."
       has_expired: "Password reset has expired."
+  products:
+    show:
+      price: "Price: "
+      ram: "RAM: "
+      screen: "Screen: "
+      hard_disk: "Hard Disk: "
+      vnd: "VND"
   admin:
     sessions:
       new:
@@ -209,6 +220,7 @@ en:
         phone: "Phone"
         address: "Address"
         delete: "Delete"
+        not_users: "Not found matching users"
     products:
       index:
         not_exist: "No exist products you need"

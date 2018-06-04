@@ -1,9 +1,8 @@
 <div id="breadcrumb">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="#"><%= t "home" %></a></li>
-      <li><a href="#"><%= t "product" %></a></li>
-      <li><a href="#"><%= t "category" %></a></li>                
+      <li><%= link_to t("home"), root_path %></li>
+      <li><%= t "product" %></li>
     </ul>
   </div>
 </div>
@@ -13,89 +12,71 @@
       <div class="product product-details clearfix">
         <div class="col-md-6">
           <div id="product-main-view">
-            <div class="product-view">
-              <img src="./img/main-product01.jpg" alt="">
-            </div>
-            <div class="product-view">
-              <img src="./img/main-product02.jpg" alt="">
-            </div>
-            <div class="product-view">
-              <img src="./img/main-product03.jpg" alt="">
-            </div>
-            <div class="product-view">
-              <img src="./img/main-product04.jpg" alt="">
-            </div>
+            <% @product.images.each do |pro| %>
+              <div class="product-view">
+                <%= image_tag pro.picture %>
+              </div>
+            <% end %>
           </div>
-          <div id="product-view">
-            <div class="product-view">
-              <img src="./img/thumb-product01.jpg" alt="">
+        </div>
+        <div class="col-md-6">
+          <div class="product-body">
+            <div class="product-label">
+              <span><%= t "detail" %></span>
             </div>
-            <div class="product-view">
-              <img src="./img/thumb-product02.jpg" alt="">
-            </div>
-            <div class="product-view">
-              <img src="./img/thumb-product03.jpg" alt="">
-            </div>
-            <div class="product-view">
-              <img src="./img/thumb-product04.jpg" alt="">
+            <h2 class="product-name"><%= @product.name %></h2>
+            <div class="rating_success"></div>
+            <% if @rate %>
+              <span class="total-star">
+                <%= "%.1f" % @rate %> <i class="fa fa-star"></i>
+              </span>
+            <% end %>
+            <% if logged_in? %>
+              <div class="stars">
+                <%= form_for :rating, url: ratings_path, method: :post, remote: true do |rating| %>
+                  <%= rating.hidden_field :product_id, value: @product.id %>
+                  <% 5.times do |rate| %>
+                    <%= rating.radio_button :rate, 5-rate, class: "star star-#{5-rate}", id: "star-#{5-rate}" %>
+                    <label class="star star-<%= 5-rate %>" for="star-<%= 5-rate %>" title="star-<%= 5-rate %>"></label>
+                  <% end %>
+                  <%= rating.submit name: "star_button", class: "star_button" %>
+                <% end %>
+              </div>
+            <% else %>
+              <%= t "rating_login" %>
+              <%= link_to t("login"), login_path,
+                {remote: true, data: {toggle: "modal", backdrop: "static", keyboard: "false", target: "#login"}} %>
+            <% end %>
+            <p>
+              <strong><%= t ".price" %>: </strong>
+              <%= number_to_currency @product.price, unit: t("vnd"),
+              precision: 0, format: "%n %u" %>
+            </p>
+            <% if @product.screen %>
+              <p><strong><%= t ".ram" %></strong>: <%= @product.RAM %></p>
+              <p><strong><%= t ".screen" %></strong>: <%= @product.screen %></p>
+              <p><strong><%= t ".hard_disk" %></strong>: <%= @product.hard_disk %></p>
+            <% end %>
+            <div class="product-btns">
+              <button class="primary-btn add-to-cart">
+                <i class="fa fa-shopping-cart"></i> <%= t "add_to_cart" %>
+              </button>
             </div>
           </div>
         </div>
-          <div class="col-md-6">
-            <div class="product-body">
-              <div class="product-label">
-                <span><%= t "new" %></span>
-              </div>
-              <h2 class="product-name"><%= t "product_name" %></h2>
-              <div>
-                <div class="product-rating">
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star-o empty"></i>
-                </div>
-                <a href="#"><%= t "review_add" %></a>
-              </div>
-              <p><strong><%= t "availability" %></strong><%= t "in_stock" %></p>
-              <p><strong><%= t "brand" %></strong><%= t "e_shop" %></p>
-              <p>Bộ bán hàng chuẩn: Sách hướng dẫn, Thùng máy, Adapter sạc, Pin</p>
-              <div class="product-options">
-                <ul class="size-option">
-                  <li><span class="text-uppercase"><%= t "ram" %></span></li>
-                  <li class="active"><a href="#">4GB</a></li>
-                  <li><a href="#">8GB</a></li>
-                  <li><a href="#">16GB</a></li>
-                </ul>
-                <ul class="color-option">
-                  <li><span class="text-uppercase"><%= t "color" %></span></li>
-                  <li class="active"><a href="#" style="background-color:#475984;"></a></li>
-                  <li><a href="#" style="background-color:#222222;"></a></li>
-                  <li><a href="#" style="background-color:#EEEEEE"></a></li>
-                  <li><a href="#" style="background-color:#FFFFFF;"></a></li>
-                </ul>
-              </div>                    
-              <div class="product-btns">
-                  <div class="qty-input">
-                    <span class="text-uppercase"><%= t "qty" %></span>
-                    <input class="input" type="number">
-                  </div>
-                  <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i><%= t "add_to_cart" %></button>
-              </div>
-            </div>
+        <div class="col-md-12">
+          <div class="product-tab">
+            <ul class="tab-nav">
+              <li class="active">
+                <%= link_to t("description"), "#tab1", data: {toggle: "tab"} %>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-12">
-            <div class="product-tab">
-              <ul class="tab-nav">
-                <li class="active"><a data-toggle="tab" href="#tab1"><%= t "description" %></a></li>
-                <li><a data-toggle="tab" href="#tab1"><%= t "detail" %></a></li>
-                <li><a data-toggle="tab" href="#tab2"><%= t "review" %></a></li>
-              </ul>
-              <div class="tab-content">
-                <div id="tab1" class="tab-pane fade in active">
-                  <p><%= t "nice" %></p>
-                </div>
-              </div>
+          <div class="tab-content">
+            <div id="tab1" class="tab-pane fade in active">
+              <p>
+                <%= @product.describe %>
+              </p>
             </div>
           </div>
         </div>
