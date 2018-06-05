@@ -38,6 +38,10 @@ inputs:
   default_floor: 0
   default_ceil: 1000000
   step_filter: 500000
+  max_ram: 32
+  medium_ram: 16
+  low_ram: 8
+  min_ram: 4
 picture:
   max_size: 10
 update_picture:

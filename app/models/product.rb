@@ -37,6 +37,24 @@ class Product < ApplicationRecord
 
   scope :filter, ->(min, max){where("price > ? and price < ?", min, max)}
 
+  scope :filter_by_category, lambda{ |filter_params|
+    products = Product.where("category_id = ?", filter_params[:id].to_i)
+
+    products = products.where("RAM <= ?", filter_params[:ram].to_i) if filter_params[:ram].to_i != 0
+    products = products.where("hard_disk = ?", filter_params[:hard_disk]) if filter_params[:hard_disk].present?
+
+    case filter_params[:sort].present?
+      when filter_params[:sort] == "alphabet"
+        products = products.order(:name)
+      when filter_params[:sort] == "ascending"
+        products = products.order(price: :asc)
+      else
+        products = products.order(price: :desc)
+    end
+
+    products
+  }
+
   private
 
   def picture_size
