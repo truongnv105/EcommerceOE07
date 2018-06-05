@@ -18,15 +18,20 @@ products:
     min_length: 20
 per:
   limit_page: 10
+  limit_filter: 9
 order_details:
   quantity:
     default: 1
 product:
-  name: 
+  name:
     min_length: 6
-  describe: 
+  describe:
     min_length: 6
   picture:
     max_size: 5
 uploader:
   picture: 300
+inputs:
+  default_floor: 0
+  default_ceil: 1000000
+  step_filter: 500000

@@ -1,0 +1,11 @@
+<%= form_tag(products_path, method: :get) do %>
+  <%= t "floor" %>
+  <%= number_field_tag :floor, Settings.inputs.default_floor,  required: true,
+    step: Settings.inputs.step_filter, min: Settings.inputs.default_floor %>
+
+  <%= t "ceil" %>
+  <%= number_field_tag :ceil, Settings.inputs.default_ceil, required: true,
+    step: Settings.inputs.step_filter, min: Settings.inputs.default_floor%>
+
+  <%= submit_tag t("filter") %>
+<% end %>

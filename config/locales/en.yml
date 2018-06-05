@@ -110,6 +110,10 @@ en:
   not_found_cate: "Not found Category"
   not_found_product: "Not found Product"
   place_order: "Place order"
+  vnd: "VND"
+  filter: "Filter"
+  floor: "Floor: "
+  ceil: "Ceil: "
   users:
     new:
       name: "Name:"
@@ -202,6 +206,10 @@ en:
         address: "Address"
         delete: "Delete"
     products:
+      index:
+        not_exist: "No exist products you need"
+        have: "Have "
+        products: " products you need"
       new:
         create_product: "Create Product"
         create: "Create"

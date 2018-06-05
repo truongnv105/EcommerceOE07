@@ -17,7 +17,7 @@ Category.create!(
 30.times do |n|
   name  = "PC-Computer-#{n+1}"
   describe = "description laptop #{n+1}"
-  price = 1000000
+  price = 1000000 * n
   picture = File.open(File.join(Rails.root, "/app/assets/images/new-icon.png"))
   discount = 20
   feature  = true
