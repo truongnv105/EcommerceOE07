@@ -1,0 +1,37 @@
+<div class="row button-add">
+  <div class="col-md-6">
+    <%= form_tag admin_category_path, method: :get do %>
+      <%= text_field_tag :product_search %>
+      <%= submit_tag t "search" %>
+    <% end %>
+  </div>
+  <div class="col-md-6 text-right">
+    <%= link_to t("add_product"), new_admin_product_path, class: "btn btn-primary" %>
+  </div>
+</div>
+<% if @products.any? %>
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th><%= t "name" %></th>
+        <th><%= t "description" %></th>
+        <th><%= t "price" %></th>
+        <th><%= t "image" %></th>
+        <th><%= t "feature" %></th>
+        <th><%= t "ram" %></th>
+        <th><%= t "screen" %></th>
+        <th><%= t "harddisk" %> Disk</th>
+        <th><%= t "status" %></th>
+        <th><%= t "edit" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: "product", collection: @products %>
+    </tbody>
+  </table>
+  <div id="pagination" class="text-center">
+    <%= paginate @products, theme: "twitter-bootstrap-3" %>
+  </div>
+<% else %>
+  <h3 class="red-req text-center"><%= t ".not_found" %></h3>
+<% end %>

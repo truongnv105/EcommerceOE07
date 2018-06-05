@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require cocoon
 //= require sweetalert2
 //= require bootstrap
 //= require admin_cus/custom.js

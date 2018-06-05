@@ -35,3 +35,7 @@ inputs:
   default_floor: 0
   default_ceil: 1000000
   step_filter: 500000
+picture:
+  max_size: 10
+update_picture:
+  max_size: 80

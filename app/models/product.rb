@@ -1,22 +1,32 @@
 class Product < ApplicationRecord
   has_many :comments
-  belongs_to :category
   has_many :ratings
   has_many :order_details
   has_many :orders, through: :order_details
-  mount_uploader :picture, PictureUploader
+  has_many :images
+
+  belongs_to :category
+
+  enum status: {hide: 0, active: 1}
+  enum feature: {normal: 0, hot: 1}
+
   validates :name, presence: true,
     length: {minimum: Settings.product.name.min_length},
       uniqueness: {case_sensitive: false}
   validates :describe, presence: true,
     length: {minimum: Settings.product.describe.min_length}
   validates :price, presence: true
-  validates :picture, presence: true, on: :create
   validates :category_id, presence: true
-  validate :picture_size
+  validates :images, presence: true
+
+  accepts_nested_attributes_for :images, allow_destroy: true
+
   scope :feature_hot, ->{where feature: true }
+
   scope :limit_num, ->(num){limit num}
+
   scope :order_price, ->{order :price}
+
   scope :name_like, ->(search){
     if search.present?
       where "name LIKE ?", "%#{search}%"

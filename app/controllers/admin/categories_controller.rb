@@ -7,7 +7,8 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def show
-    @products = @category.products.name_like(params[:product_search]).page(params[:page]).per Settings.per.limit_page
+    @products = @category.products.name_like(params[:product_search]).
+      page(params[:page]).per Settings.per.limit_page
   end
 
   def new

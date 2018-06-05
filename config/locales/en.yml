@@ -89,6 +89,9 @@ en:
   delete_success: "Delete Success"
   you_click: "You clicked the button!"
   sure: "You sure?"
+  describe: "Describe"
+  discount: "Discount"
+  category_id: "Category_Id"
   views:
     pagination:
       previous: "‹ PREV"
@@ -114,6 +117,7 @@ en:
   filter: "Filter"
   floor: "Floor: "
   ceil: "Ceil: "
+  picture_blank: "picture can't be blank"
   users:
     new:
       name: "Name:"
@@ -213,6 +217,7 @@ en:
       new:
         create_product: "Create Product"
         create: "Create"
+        add_product: "Add Product"
       create:
         add_success: "Add Product Success"
       edit:
@@ -220,6 +225,8 @@ en:
         update: "Update"
       update:
         update_success: "Update Product Success"
+      form:
+        add_picture: "Addtion Picture"
     categories:
       new:
         create_category: "Create Category"

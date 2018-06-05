@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-8 col-md-offset-2 form_product">
+    <h1 class="text-center"><%= yield :title_form %></h1>
+    <%= form_for [:admin, @product] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name, t("name") %>
+      <%= f.text_field :name %>
+
+      <%= f.label :describe, t("describe") %>
+      <%= f.text_area :describe %>
+
+      <%= f.label :price, t("price") %>
+      <%= f.number_field :price, value: number_with_precision(f.object.price, precision: 0), min: 1 %>
+
+      <div class="form-group">
+        <%= f.fields_for :images do |builder| %>
+          <%= render "image_fields", f: builder %>
+        <% end %>
+        <%= link_to_add_association t(".add_picture"), f, :images, class: "btn btn-primary" %>
+      </div>
+
+      <%= f.label :discount , t("discount")%>
+      <%= f.number_field :discount, max: 100 %>
+
+      <%= f.label :feature, t("feature") %>
+      <%= f.select :feature, Product.features.keys, {} %>
+
+      <%= f.label :RAM, t("ram") %>
+      <%= f.text_field :RAM %>
+
+      <%= f.label :screen, t("screen") %>
+      <%= f.text_field :screen %>
+
+      <%= f.label :hard_disk, t("harddisk") %>
+      <%= f.text_field :hard_disk %>
+
+      <%= f.label :status, t("status") %>
+      <%= f.select :status, Product.statuses.keys, {} %>
+
+      <%= f.label :category_id, t("category_id") %>
+      <%= f.select :category_id, @categories.map {|c| [c.name, c.id]} %>
+
+      <%= f.submit yield(:button), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

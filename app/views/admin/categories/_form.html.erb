@@ -1,0 +1,13 @@
+<div class="row form_category">
+  <div class="col-md-8 col-md-offset-2">
+    <h1 class="text-center"><%= yield :title_form %></h1>
+    <%= form_for [:admin, @category] do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <%= f.label :name, t("name") %>
+      <%= f.text_field :name %>
+
+      <%= f.submit yield(:button), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
