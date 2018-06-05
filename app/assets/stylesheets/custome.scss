@@ -122,3 +122,27 @@ a {
     }
   }
 }
+
+.form_edit {
+  padding: 20px 0;
+  h1 {
+    color: $blue;
+  }
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.profile_user {
+  &>div {
+    padding: 20px 20px 40px;
+    background-color: $alice_blue;
+    p {
+      padding-left: 20px;
+    }
+  }
+  h2 {
+    color: $blue;
+  }
+}

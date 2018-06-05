@@ -1,13 +1,13 @@
-<h2 align="center"><%= t "profile_account" %></h2>
-<h4><%= t "name" %>:
-  <h5><%= @user.name %></h5>
-</h4>
-<h4><%= t "email" %>:
-  <h5> <%= @user.email %></h5>
-</h4>
-<h4><%= t "phone_number" %>:
-  <h5><%= @user.phone_number %></h5>
-</h4>
-<h4><%= t "address" %>:
-  <h5> <%= @user.address %></h5>
-</h4>
+<div class="row profile_user">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 align="center"><%= t "profile_account" %></h2>
+    <label><%= t "name" %>:</label>
+    <p><%= @user.name %></p>
+    <label><%= t "email" %>:</label>
+    <p><%= @user.email %></p>
+    <label><%= t "phone_number" %>:</label>
+    <p><%= @user.phone_number %></p>
+    <label><%= t "address" %>:</label>
+    <p><%= @user.address %></p>
+  </div>
+</div>
