@@ -4,7 +4,7 @@ class Supports::ProductSupport
   end
 
   def new_products
-    @new_products = Product.limit_num(4)
+    @new_products = Product.order_created.limit_num(4)
   end
 
   def cheap_products

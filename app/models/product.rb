@@ -21,9 +21,11 @@ class Product < ApplicationRecord
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  scope :feature_hot, ->{where feature: true }
+  scope :feature_hot, ->{where feature: :hot}
 
   scope :limit_num, ->(num){limit num}
+
+  scope :order_created, ->{order "created_at DESC"}
 
   scope :order_price, ->{order :price}
 

@@ -10,18 +10,15 @@
     <div class="container">
       <div class="pull-left">
         <div class="header-logo">
-          <a class="logo" href="#">
-            <%= image_tag("logo.png", :alt => t("rss_feed")) %>
-          </a>
+          <%= link_to image_tag("logo.png", :alt => t("rss_feed")), root_path %>
         </div>
         <div class="header-search">
-          <form>
-            <input class="input search-input" type="text" placeholder="<%= t 'enter_keyword' %>">
-            <select class="input search-categories">
-              <option value="0"><%= t "all_categories" %></option>
-            </select>
-            <button class="search-btn"><i class="fa fa-search"></i></button>
-          </form>
+          <%= form_tag(products_path, method: :get) do %>
+            <%= text_field_tag :product_search, nil, placeholder: t("enter_keyword") %>
+            <%= button_tag type: "submit", class: "search-btn" do %>
+              <i class="fa fa-search"></i>
+            <% end %>
+          <% end %>
         </div>
       </div>
       <div class="pull-right">

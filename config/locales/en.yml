@@ -287,3 +287,6 @@ en:
   dates:
     formats:
       date_month_year: "%d/%m/%y"
+  products:
+    index:
+      alt_image: "item"

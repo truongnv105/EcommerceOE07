@@ -4,49 +4,8 @@
       <div class="menu-nav">
         <span class="menu-header"><%= t "menu" %> <i class="fa fa-bars"></i></span>
         <ul class="menu-list">
-          <li>
-            <%= link_to t("home"), root_path %>
-          <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><%= t "pc" %> <i class="fa fa-caret-down"></i></a>
-            <div class="custom-menu">
-              <div class="row">
-                <div class="col-md-12">
-                  <ul class="list-links">
-                    <li><%= link_to t("dell"), root_path %></li>
-                    <li><%= link_to t("hp"), root_path %></li>
-                    <li><%= link_to t("lenovo"), root_path %></li>
-                    <li><%= link_to t("asus"), root_path %></li>
-                  </ul>
-                </div>
-            </div>
-          </li>
-          <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><%= t "laptop" %> <i class="fa fa-caret-down"></i></a>
-            <div class="custom-menu">
-              <div class="row">
-                <div class="col-md-12">
-                  <ul class="list-links">
-                    <li><%= link_to t("apple"), root_path %></li>
-                    <li><%= link_to t("dell"), root_path %></li>
-                    <li><%= link_to t("hp"), root_path %></li>
-                    <li><%= link_to t("lenovo"), root_path %></li>
-                    <li><%= link_to t("asus"), root_path %></li>
-                  </ul>
-                </div>
-            </div>
-          </li>
-          <li class="dropdown mega-dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"><%= t "accessories" %> <i class="fa fa-caret-down"></i></a>
-            <div class="custom-menu">
-              <div class="row">
-                <div class="col-md-12">
-                  <ul class="list-links">
-                    <li><%= link_to t("ban_phim"), root_path %></li>
-                    <li><%= link_to t("chuot"), root_path %></li>
-                    <li><%= link_to t("tai_nghe"), root_path %></li>
-                    <li><%= link_to t("sac"), root_path %></li>
-                    <li><%= link_to t("pin"), root_path %></li>
-                  </ul>
-                </div>
-            </div>
-          </li>
+          <li><%= link_to t("home"), root_path %></li>
+          <%= render partial: "layouts/categories_menu", collection: @categories_menu, as: :cate %>
           <li><%= link_to t("about"), root_path %></li>
           <li><%= link_to t("contact"), root_path %></li>
           <li><%= link_to t("help"), root_path %></li>
