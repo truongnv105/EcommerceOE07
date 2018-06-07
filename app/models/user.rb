@@ -8,7 +8,11 @@ class User < ApplicationRecord
 
   scope :user_activated, -> {where("activated = ? AND is_admin = ?", true, false)}
 
-  scope :name_like, -> (search){where("name LIKE ? OR email LIKE ?", "%#{search}%", "%#{search}%")}
+  scope :name_like, -> (search){
+    if search.present?
+      where("name LIKE :q OR email LIKE :q", q: "%#{search}%")
+    end
+  }
 
   has_many :comments, dependent: :destroy
   has_many :orders

@@ -3,9 +3,8 @@ class Admin::UsersController < Admin::ApplicationController
   before_action :load_menu, only: %i(index)
 
   def index
-    search = params[:user_search]
-    @users = User.user_activated.page(params[:page]).per(Settings.per.limit_page)
-    @users = User.user_activated.name_like(search).page(params[:page]).per(Settings.per.limit_page) unless search.blank?
+    @users = User.user_activated.name_like(params[:user_search]).
+      page(params[:page]).per Settings.per.limit_page
   end
 
   def destroy

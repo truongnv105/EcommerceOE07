@@ -2,9 +2,7 @@
   <td><%= product.name %></td>
   <td><%= product.describe %></td>
   <td><%= number_to_currency product.price, unit: "", precision: 0 %></td>
-  <% product.images.each do |pro| %>
-    <td><%= image_tag pro.picture, size: Settings.update_picture.max_size %></td>
-  <% end %>
+  <td><%= image_tag product.images.first.picture, size: Settings.update_picture.max_size %></td>
   <td><%= product.feature %></td>
   <td><%= product.RAM %></td>
   <td><%= product.screen %></td>

@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   resources :categories
   resources :carts
   resources :orders
+  resources :ratings, only: :create
 end
