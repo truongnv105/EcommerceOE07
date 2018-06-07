@@ -32,7 +32,7 @@
               <% if @current_order %>
                 <% @current_order.each do |cart_item| %>
                   <tr>
-                    <td class="thumb"><%= image_tag cart_item["picture"] %></td>
+                    <td class="thumb"><%= image_tag cart_item["picture"]["url"] %></td>
                     <td class="details">
                       <%= link_to cart_item["name"], product_path(cart_item["product_id"]) %>
                     </td>

@@ -11,8 +11,8 @@ class ProductsController < ApplicationController
         page(params[:page]).per(Settings.per.limit_page)
     end
     return if @products.present?
-      flash[:warning] = t ".not_exist"
-      redirect_to root_url
+    flash[:warning] = t ".not_exist"
+    redirect_to root_url
   end
 
   def show

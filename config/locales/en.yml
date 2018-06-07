@@ -167,6 +167,13 @@ en:
         please ignore this email and your password will stay as it is."
       introduct_reset_password: "To reset your password click the link below:"
       expired_time: "This link will expire in two hours."
+    order_success:
+      order_success: "You have just bought success some item"
+      product_name: "Product's name: "
+      product_price: "Product's price: "
+      message_for_customer: "Products you have just bought, thank you!"
+      signature: "----ANT SHOP----"
+      quantity: "Quantity: "
   mailers:
     user_mailer:
       account_activation: "Account activation"

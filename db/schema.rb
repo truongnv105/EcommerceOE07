@@ -59,13 +59,12 @@ ActiveRecord::Schema.define(version: 20180531011111) do
     t.string "name"
     t.text "describe"
     t.decimal "price", precision: 9, scale: 2
-    t.string "picture"
     t.integer "discount"
-    t.boolean "feature"
+    t.integer "feature", default: 0, null: false
     t.integer "RAM"
     t.string "screen"
     t.string "hard_disk"
-    t.boolean "status", default: true
+    t.integer "status", default: 0, null: false
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -16,7 +16,7 @@ class CartsController < ApplicationController
     end
 
     item = Cart.new(@product.id, @product.name, @product.price,
-      @product.picture, Settings.order_details.quantity.default)
+      @product.images.first.picture, Settings.order_details.quantity.default)
 
     index = session[:order_id].find_index {|n| n["product_id"] == item.product_id}
 
