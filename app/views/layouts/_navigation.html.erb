@@ -6,9 +6,9 @@
         <ul class="menu-list">
           <li><%= link_to t("home"), root_path %></li>
           <%= render partial: "layouts/categories_menu", collection: @categories_menu, as: :cate %>
-          <li><%= link_to t("about"), root_path %></li>
-          <li><%= link_to t("contact"), root_path %></li>
-          <li><%= link_to t("help"), root_path %></li>
+          <li><%= link_to t("about"), about_path %></li>
+          <li><%= link_to t("contact"), contact_path %></li>
+          <li><%= link_to t("help"), help_path %></li>
         </ul>
       </div>
     </div>

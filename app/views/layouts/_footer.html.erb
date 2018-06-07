@@ -4,62 +4,63 @@
       <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="footer">
           <div class="footer-logo">
-            <a class="logo" href="#">
-              <%= image_tag("logo.png", :alt => "rss feed") %>
-            </a>
+            <%= link_to image_tag("logo.png", :alt => t("rss_feed")), root_path %>
           </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <ul class="footer-social">
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          </ul>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="footer">
-          <h3 class="footer-header">My Account</h3>
-          <ul class="list-links">
-            <li><a href="#">My Account</a></li>
-            <li><a href="#">My Wishlist</a></li>
-            <li><a href="#">Compare</a></li>
-            <li><a href="#">Checkout</a></li>
-            <li><a href="#">Login</a></li>
-          </ul>
+          <h3 class="footer-header"><%= t "address" %></h3>
+          <b><%= t "address_content" %></b>
         </div>
       </div>
       <div class="clearfix visible-sm visible-xs"></div>
       <div class="col-md-3 col-sm-6 col-xs-6">
         <div class="footer">
-          <h3 class="footer-header">Customer Service</h3>
+          <h3 class="footer-header"><%= t "customer_sevice" %></h3>
           <ul class="list-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Shiping & Return</a></li>
-            <li><a href="#">Shiping Guide</a></li>
-            <li><a href="#">FAQ</a></li>
+            <li>
+              <%= link_to t("about"), about_path %>
+            </li>
+            <li>
+              <%= link_to t("contact"), contact_path %>
+            </li>
+            <li>
+              <%= link_to t("help"), help_path %>
+            </li>
           </ul>
         </div>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-6">
-        <div class="footer">
-          <h3 class="footer-header">Stay Connected</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
-          <form>
-            <div class="form-group">
-              <input class="input" placeholder="Enter Email Address">
-            </div>
-            <button class="primary-btn">Join Newslatter</button>
-          </form>
+        <div class="footer footer-last">
+          <h3 class="footer-header"><%= t "support_custome" %></h3>
+          <ul class="list-links">
+            <li>
+              <span class="w-100"><%= t "truong" %></span>
+              <%= link_to "tel:0976767676;", class: "w-phone" do %>
+                <i class="fa fa-phone"></i> <%= t "phone_one" %>
+              <% end %>
+            </li>
+            <li>
+              <span class="w-100"><%= t "ngoc" %></span>
+              <%= link_to "tel:0981234567;", class: "w-phone" do %>
+                <i class="fa fa-phone"></i> <%= t "phone_two" %>
+              <% end %>
+            </li>
+            <li>
+              <span class="w-100"><%= t "chi_anh" %></span>
+              <%= link_to "tel:0988888888;", class: "w-phone" do %>
+                <i class="fa fa-phone"></i> <%= t "phone_three" %>
+              <% end %>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
-    <hr>
     <div class="row">
       <div class="col-md-8 col-md-offset-2 text-center">
         <div class="footer-copyright">
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+          <%= t "copy_right" %>
         </div>
       </div>
     </div>

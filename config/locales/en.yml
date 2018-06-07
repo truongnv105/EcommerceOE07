@@ -130,6 +130,16 @@ en:
   comment_login: "Please login before comments product..."
   edit_s: "Edit Success"
   index: "Index"
+  ngoc: "NGOC:"
+  truong: "TRUONG:"
+  chi_anh: "CHI ANH:"
+  address_content: "Floor 11, Pham Hung - Me Tri crossroads,Me Tri Ha urban area, Nam Tu Liem district, Hanoi"
+  customer_sevice: "Customer Service"
+  support_custome: "support customer"
+  copy_right: "Copyright 2018 Design by ANT SHOP"
+  phone_one: "0976767676"
+  phone_two: "0981234567"
+  phone_three: "0988888888"
   ratings:
     create:
       thank_you: "Thank you for your review"
