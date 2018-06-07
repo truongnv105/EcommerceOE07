@@ -1,32 +1,9 @@
 <div class="section">
   <div class="container list_product">
     <div class="row">
-      <% @products.each do |product| %>
-        <div class="col-md-3">
-          <div class="product product-single text-center">
-            <div class="product-thumb">
-              <%= link_to image_tag(product.images.first.picture,
-                alt: t(".alt_image"), size: Settings.product.picture.size), product_path(product) %>
-            </div>
-            <div class="product-body">
-              <h3 class="product-price">
-                <%= number_to_currency(product.price, unit: t("vnd"), precision: 0, format: "%n %u") %>
-              </h3>
-              <h2 class="product-name"><%= link_to product.name, product_path(product) %></h2>
-              <div class="product-btns">
-                <%= link_to carts_path(product_id: product.id),
-                  method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
-                  <i class="fa fa-shopping-cart"></i>
-                  <%= t "add_to_cart" %>
-                <% end %>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    </div>
-    <div id="pagination" class="text-center">
-      <%= paginate @products, theme: "twitter-bootstrap-3" %>
+      <div class="col-md-12 col-sm-6 col-xs-6">
+        <%= render "products/product", products: @products %>
+      </div>
     </div>
   </div>
 </div>

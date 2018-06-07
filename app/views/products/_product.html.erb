@@ -1,0 +1,33 @@
+<div class="row">
+  <% products.each do |product| %>
+    <div class="product product-single col-md-4">
+      <div class="product-thumb">
+        <%= link_to image_tag(product.images.first.picture, alt: t(".alt_image")), admin_path %>
+      </div>
+      <div class="product-body">
+        <h3 class="product-price">
+          <%= number_to_currency product.price, unit: t("vnd"),
+            precision: 0, format: "%n %u" %>
+        </h3>
+        <div class="product-rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o empty"></i>
+        </div>
+        <h2 class="product-name"><%= link_to product.name, admin_path %></h2>
+        <div class="product-btns">
+          <%= link_to carts_path(product_id: product.id),
+            method: :post, remote: true, class: "primary-btn add-to-cart" do  %>
+            <i class="fa fa-shopping-cart"></i>
+            <%= t "add_to_cart" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+<div id="pagination" class="text-center">
+  <%= paginate @products, theme: "twitter-bootstrap-3" %>
+</div>

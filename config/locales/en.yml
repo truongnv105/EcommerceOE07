@@ -290,3 +290,18 @@ en:
   products:
     index:
       alt_image: "item"
+      not_exist: "No exist products you need"
+      have: "Have "
+      product: " products like you need"
+  categories:
+    show:
+      32gb: "32GB"
+      16gb: "16GB"
+      8gb: "8GB"
+      4gb: "4GB"
+      filter: "Filter"
+      ssd: "SSD"
+      hhd: "HHD"
+      alphabet: "Sort by alphabet a...z"
+      ascending: "Sort price by ascending"
+      descending: "Sort price by descending"

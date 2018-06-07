@@ -111,6 +111,7 @@
         }
       });
     }
+
     $(".input").change(function(){
       var quantity = $(this).val();
       var product_id = $(this).prev("input").val();
@@ -119,6 +120,28 @@
         method: "put",
         data: {quantity: quantity}
       });
+    });
+
+    $(".button-ram").click(function(){
+      var ram = $(this).children("input").val();
+      $(".option-rams li").removeClass("active");
+      $(this).parents("li").addClass("active");
+      $("input.value-ram").val(ram);
+      $(".filter").click();
+    });
+
+    $(".button-hard-disk").click(function(){
+      var hard_disk = $(this).children("span").text();
+      $(".option-hard-disk li").removeClass("active");
+      $(this).parents("li").addClass("active");
+      $("input.value-hard-disk").val(hard_disk);
+      $(".filter").click();
+    });
+
+    $("select.input").change(function(){
+      var sort = $("select.input-sort").val();
+      $("input.value-sort").val(sort);
+      $(".filter").click();
     });
   });
 })(jQuery);

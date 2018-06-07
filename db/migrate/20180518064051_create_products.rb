@@ -6,7 +6,7 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.decimal :price, precision: 9, scale: 2
       t.integer :discount
       t.integer :feature, null: false, default: 0
-      t.string :RAM
+      t.integer :RAM
       t.string :screen
       t.string :hard_disk
       t.integer :status, null: false, default: 0
