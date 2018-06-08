@@ -1,0 +1,35 @@
+<div class="comment" id="comment-<%= comment.id %>">
+  <div class="row">
+    <div class="col-md-12">
+      <h5><%= comment.user.name %> :
+        <% if comment.user.is_admin? %>
+          (<i class="fa fa-user"></i> administrators)
+        <% end %>
+      </h5>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+      <p><%= comment.content %></p>
+    </div>
+    <div class="col-md-10 col-md-offset-1">
+      <span class="timestamp">
+        <%= t "post" %><%= time_ago_in_words(comment.created_at) %>
+        <%= t "ago" %>
+        <% if logged_in? %>
+          <% if current_user?(comment.user) || current_user.is_admin? && !comment.user.is_admin %>
+            <%= link_to "delete",
+              product_comment_path(comment.product, comment), method: :delete,
+              remote: true, data: {confirm: "You sure delete?"}, class: "blue" %>
+          <% end %>
+        <% end %>
+      </span>
+    </div>
+    <% if current_user? comment.user %>
+      <div class="col-md-12 edit_comment-<%= comment.id %>">
+        <p>
+          <%= link_to t("edit_comment"),
+            edit_product_comment_path(@product, comment), remote: true, class: "blue" %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+</div>

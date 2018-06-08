@@ -7,14 +7,6 @@ class Admin::UsersController < Admin::ApplicationController
       page(params[:page]).per Settings.per.limit_page
   end
 
-  def destroy
-    user = User.find_by(id: params[:id])
-    if !user.nil?
-      user.destroy
-    end
-    redirect_to request.referer
-  end
-
   private
 
   def load_menu

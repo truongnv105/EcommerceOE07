@@ -5,12 +5,13 @@
   <table class="table table-bordered text-center">
     <thead>
       <tr>
+        <th><%= t "index" %></th>
         <th><%= t ".name" %></th>
         <th><%= t ".edit" %></th>
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "categories", collection: @categories, as: :cate %>
+      <%= render "categories", categories: @categories_menu %>
     </tbody>
   </table>
 <% end %>

@@ -5,7 +5,6 @@ class RatingsController < ApplicationController
   def create
     @rating = current_user.ratings.build rating_params
     if @rating.save
-      success = true
       @rate = Product.find(params[:rating][:product_id]).ratings.average(:rate)
       respond_to do |format|
         format.html{redirect_to request.referer}

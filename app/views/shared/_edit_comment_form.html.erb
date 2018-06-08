@@ -1,0 +1,9 @@
+<p class="error_comment_edit"></p>
+<%= form_for [product, comment], remote: true do |f| %>
+  <div class="field">
+    <%= f.text_area :content, required: true, :placeholder => "Leave a comment", class: "text_area_comment_edit" %>
+  </div>
+  <button class="btn btn-primary btn_comment" type="submit">
+    <%= t "update" %>
+  </button>
+<% end %>

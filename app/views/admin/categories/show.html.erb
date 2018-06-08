@@ -13,6 +13,7 @@
   <table class="table table-bordered text-center">
     <thead>
       <tr>
+        <th><%= t "index" %></th>
         <th><%= t "name" %></th>
         <th><%= t "description" %></th>
         <th><%= t "price" %></th>
@@ -26,7 +27,7 @@
       </tr>
     </thead>
     <tbody>
-      <%= render partial: "product", collection: @products %>
+      <%= render "product", products: @products %>
     </tbody>
   </table>
   <div id="pagination" class="text-center">

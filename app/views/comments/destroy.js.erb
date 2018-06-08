@@ -1,0 +1,3 @@
+$('#comments').find('#comment-<%= @comment.id %>').remove();
+$('#alert_error_comment').addClass('complete').html('<%= t "delete_s" %>').fadeIn();
+$('#alert_error_comment').fadeOut(3000);

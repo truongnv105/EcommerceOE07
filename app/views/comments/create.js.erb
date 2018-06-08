@@ -1,0 +1,7 @@
+<% if @comment.errors.blank? %>
+  $('.title_comment').after('<%= j render "comment", product: @product, comment: @comment %>');
+  $('.text_area_comment').val('');
+  $('#error_length').html('');
+<% else %>
+  $('#error_length').html('<%= @comment.errors.full_messages[0] %>');
+<% end %>
