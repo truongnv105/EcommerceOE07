@@ -161,3 +161,19 @@ form {
     }
   }
 }
+
+.orders {
+  width: 100%;
+  margin: 20px;
+  tr, th {
+    text-align: center;
+    td {
+      padding: 10px;
+      border: 1px solid $gray;
+    }
+  }
+}
+
+.filter-status {
+  display: none;
+}

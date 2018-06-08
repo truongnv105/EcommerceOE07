@@ -2,7 +2,8 @@
   <% products.each do |product| %>
     <div class="product product-single col-md-4">
       <div class="product-thumb">
-        <%= link_to image_tag(product.images.first.picture, alt: t(".alt_image")), admin_path %>
+        <%= link_to image_tag(product.images.first.picture,
+          alt: t(".alt_image"), size: Settings.product.picture.size), product_path(product) %>
       </div>
       <div class="product-body">
         <h3 class="product-price">
@@ -16,7 +17,7 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star-o empty"></i>
         </div>
-        <h2 class="product-name"><%= link_to product.name, admin_path %></h2>
+        <h2 class="product-name"><%= link_to product.name, product_path(product) %></h2>
         <div class="product-btns">
           <%= link_to carts_path(product_id: product.id),
             method: :post, remote: true, class: "primary-btn add-to-cart" do  %>

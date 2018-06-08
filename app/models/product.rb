@@ -36,6 +36,14 @@ class Product < ApplicationRecord
   }
 
   scope :filter, ->(min, max){where("price > ? and price < ?", min, max)}
+  scope :filter_ram, ->(ram){where "RAM <= ?", ram}
+  scope :filter_hard_disk, ->(hard_disk){where "hard_disk = ?", hard_disk}
+  scope :sort_alphabet, ->{order :name}
+  scope :sort_asc, ->{order price: :asc}
+  scope :sort_desc, ->{order price: :desc}
+  scope :mail_product, ->(product_ids){
+    where("id in (?)", product_ids).select(:id, :name, :price)
+  }
 
   scope :filter_by_category, lambda{ |filter_params|
     products = Product.where("category_id = ?", filter_params[:id].to_i)

@@ -28,7 +28,7 @@ class OrdersController < ApplicationController
 
     if @order.update_attributes order_params
       flash[:sucess] = t ".cancel_success"
-      redirect_to orders_url
+      redirect_to request.referer
     end
   end
 

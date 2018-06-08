@@ -122,6 +122,12 @@ en:
     create:
       thank_you: "Thank you for your review"
       please_choice: "Please select one star before review"
+  status: "STT"
+  user_order: "User's order"
+  order_date: "Order date"
+  status_order: "Status order"
+  action: "Action"
+  you_sure_change_status?: "Do you want to change to this status?"
   users:
     new:
       name: "Name:"
@@ -264,6 +270,14 @@ en:
         edit: "Edit"
       show:
         not_found: "Not found product"
+    orders:
+      index:
+        find_order: "Filter order by status: "
+        all: "All Orders"
+        cancel: "Cancel"
+        pending: "Pending"
+        delivered: "Delivered"
+        filter: "Filter"
   layouts:
     header_admin:
       admin_shop: "Admin Shop"
@@ -277,6 +291,7 @@ en:
       addtion: "Addtion"
       add_product: "Add Product"
       add_categories: "Add Cateogries"
+      list_orders: "List Orders"
   order_details:
     create:
       buy_cuccessfully: "You just buy new item cussess"
@@ -320,7 +335,7 @@ en:
       4gb: "4GB"
       filter: "Filter"
       ssd: "SSD"
-      hhd: "HHD"
+      hdd: "HDD"
       alphabet: "Sort by alphabet a...z"
       ascending: "Sort price by ascending"
       descending: "Sort price by descending"

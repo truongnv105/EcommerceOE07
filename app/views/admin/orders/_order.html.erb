@@ -1,0 +1,28 @@
+<table class="orders">
+  <tr>
+    <th><%= t "status" %></th>
+    <th><%= t "user_order" %></th>
+    <th><%= t "order_date" %></th>
+    <th><%= t "status_order" %></th>
+    <th><%= t "action" %></th>
+  </tr>
+  <% orders.each do |order| %>
+    <tr>
+      <td><%= order.id %></td>
+      <td><%= order.user.name %></td>
+      <td><%= l order.created_at, format: :short %></td>
+      <td class="status-order-<%= order.id %>"><%= order.status %></td>
+      <td>
+        <%= select_tag "change-status-order", options_for_select(["cancel", "pending", "delivered"],
+          :selected => order.status), {:class => "change-status-order"} %>
+        <%= hidden_field_tag :order_id, order.id %>
+        <%= link_to admin_order_path(order.id) do %>
+          <i class="fa fa-eye" style="font-size:24px"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div id="pagination" class="text-center">
+  <%= paginate orders, theme: "twitter-bootstrap-3" %>
+</div>

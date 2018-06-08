@@ -1,0 +1,15 @@
+<%= t ".find_order" %>
+<select id="order-status">
+  <option value="all"><%= t ".all" %></option>
+  <option value="cancel"><%= t ".cancel" %></option>
+  <option value="pending"><%= t ".pending" %></option>
+  <option value="delivered"><%= t ".delivered" %></option>
+</select>
+
+<%= form_tag(admin_orders_path, method: :get, remote: true) do %>
+  <%= hidden_field_tag :status, "", class: "order-status" %>
+  <%= submit_tag t(".filter"), class: "filter-status" %>
+<% end %>
+<div class="show-order">
+  <%= render "admin/orders/order", orders: @orders %>
+</div>

@@ -22,11 +22,11 @@ function init_menu_toggle (){
     }
   });
 }
- 
+
 $(document).ready(function() {
   init_menu();
   init_menu_toggle();
-  
+
   $.rails.allowAction = function(link){
     if (link.data('confirm') == undefined){
       return true;
@@ -60,4 +60,23 @@ $(document).ready(function() {
   if($('.right_col').height() < $(window).height()){
     $('.right_col').css('height', $(window).height());
   }
+
+  $("select#order-status").change(function(){
+    var status = $("#order-status").val();
+    $("input.order-status").val(status);
+    $(".filter-status").click();
+  });
+
+  $(document).on("change", "select.change-status-order", function(){
+    var status = $(this).val();
+    var order_id = $(this).next("input").val();
+    $(".status-order-" + order_id).text(status);
+    if(confirm(I18n.t("you_sure_change_status?"))){
+      $.ajax({
+        url: "/admin/orders/" + order_id,
+        method: "put",
+        data: {status: status}
+      });
+    };
+  });
 });

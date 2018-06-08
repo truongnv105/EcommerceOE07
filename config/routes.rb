@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
     resources :categories, except: :destroy
     resources :products, except: %i(index show destroy)
+    resources :orders
   end
   resources :users
   resources :account_activations, only: :edit
