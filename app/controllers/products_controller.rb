@@ -17,6 +17,16 @@ class ProductsController < ApplicationController
 
   def show
     @rate = @product.ratings.average(:rate)
+    if params[:comment_limit].present?
+      @comments = @product.comments.more_than(params[:comment_limit]).
+      limit_num Settings.comments.limit_show
+    else
+      @comments = @product.comments.limit_num Settings.comments.limit_show
+    end
+    respond_to do |format|
+     format.html
+     format.js
+    end
   end
 
   private

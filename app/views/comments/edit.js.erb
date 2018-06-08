@@ -1,0 +1,3 @@
+$('.edit_comment').remove();
+$('.edit_comment-<%= @comment.id %>').
+  append('<%= j render "shared/edit_comment_form", product: @product, comment: @comment %>');

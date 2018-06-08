@@ -87,6 +87,7 @@ en:
   describe: "Describe"
   discount: "Discount"
   category_id: "Category_Id"
+  comment_length: "Comment must have length more than 6 character"
   views:
     pagination:
       previous: "‹ PREV"
@@ -118,6 +119,17 @@ en:
   review_success: "review success"
   rating_login: "Please Login to Rating Product... "
   star: "stars for Product"
+  create: "Create"
+  post: "Posted "
+  ago: "ago."
+  delete_s: "Delete Comment Success"
+  delete_f: "Delete Fail! Comment not exitst?"
+  comment: "Comment:"
+  show: "Show More Comments"
+  edit_comment: "Edit Comment"
+  comment_login: "Please login before comments product..."
+  edit_s: "Edit Success"
+  index: "Index"
   ratings:
     create:
       thank_you: "Thank you for your review"

@@ -58,9 +58,10 @@
               <p><strong><%= t ".hard_disk" %></strong>: <%= @product.hard_disk %></p>
             <% end %>
             <div class="product-btns">
-              <button class="primary-btn add-to-cart">
-                <i class="fa fa-shopping-cart"></i> <%= t "add_to_cart" %>
-              </button>
+              <%= link_to carts_path(product_id: @product.id),
+                    method: :post, remote: true, class: "primary-btn add-to-cart" do %>
+                 <i class="fa fa-shopping-cart"></i> <%= t "add_to_cart" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -80,7 +81,23 @@
             </div>
           </div>
         </div>
+        <div class="col-md-12" id="comments" >
+          <div id="alert_error_comment"></div>
+          <h3 class="title_comment"><%= t "comment" %></h3>
+          <%= render partial: "comments/comment", collection: @comments %>
+        </div>
+        <% if @comments.any? %>
+          <div id="button_show" class="col-md-12">
+            <%= link_to t("show"), product_path(@product,
+              comment_limit: @comments.last.id),
+              remote: true, method: :get, class: "btn_show_more" %>
+          </div>
+        <% end %>
+        <div id="error_length" class="col-md-12 red-req">&nbsp;</div>
+        <div class="col-md-12 comment_form">
+          <%= render "shared/comment_form", product: @product %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</div

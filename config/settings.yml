@@ -12,7 +12,8 @@ users:
     max_length: 255
 comments:
   content:
-    min_length: 80
+    min_length: 6
+  limit_show: 10
 products:
   name:
     min_length: 20

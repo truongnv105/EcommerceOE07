@@ -1,22 +1,13 @@
 class User < ApplicationRecord
-
   attr_accessor :remember_token, :activation_token, :reset_token
 
   before_save {email.downcase!}
-
   before_create :create_activation_digest
 
-  scope :user_activated, -> {where("activated = ? AND is_admin = ?", true, false)}
-
-  scope :name_like, -> (search){
-    if search.present?
-      where("name LIKE :q OR email LIKE :q", q: "%#{search}%")
-    end
-  }
-
-  has_many :comments, dependent: :destroy
+  has_many :comments
   has_many :orders
   has_many :ratings
+
   validates :name, presence: true,
     length: {maximum: Settings.users.name.max_length}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -31,6 +22,14 @@ class User < ApplicationRecord
     length: {maximum: Settings.users.phone_number.max_length}
   validates :address, presence: true,
     length: {minimum: Settings.users.address.min_length}
+
+  scope :user_activated, -> {where("activated = ? AND is_admin = ?", true, false)}
+
+  scope :name_like, -> (search){
+    if search.present?
+      where("name LIKE :q OR email LIKE :q", q: "%#{search}%")
+    end
+  }
 
   class << self
     def digest string

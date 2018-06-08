@@ -1,0 +1,8 @@
+<% if @comment.errors.blank? %>
+  $('#comment-<%= @comment.id %>').replaceWith('<%= j render "comment", comment: @comment %>');
+  $('#comment-<%= @comment.id %>')
+  .before('<p class="complete edit_mes"><%= t "edit_s" %></p>').fadeIn();
+  $('.edit_mes').fadeOut(3000);
+<% else %>
+  $('.error_comment_edit').addClass('red-req').html('<%= @comment.errors.full_messages[0] %>');
+<% end %>

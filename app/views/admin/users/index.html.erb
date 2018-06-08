@@ -8,25 +8,21 @@
     <table class="table table-bordered">
       <thead>
         <tr>
+          <th><%= t "index" %></th>
           <th><%= t ".name" %></th>
           <th><%= t ".email" %></th>
           <th><%= t ".phone" %></th>
           <th><%= t ".address" %></th>
-          <th><%= t ".delete" %></th>
         </tr>
       </thead>
       <tbody class="render">
-        <% @users.each do |user| %>
+        <% @users.each.with_index 1 do |user, index| %>
           <tr>
+            <td><%= index %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
             <td><%= user.phone_number %></td>
             <td><%= user.address %></td>
-            <td class="text-center">
-              <%= link_to admin_user_path(user), method: :delete, class: "font_icon", data: { confirm: t(".you_sure") } do %>
-                <i class="fa fa-trash"></i>
-              <% end %>
-            </td>
           </tr>
         <% end %>
       </tbody>

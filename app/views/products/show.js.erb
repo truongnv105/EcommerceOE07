@@ -1,0 +1,9 @@
+<% if @comments.any? %>
+  $('#button_show').remove();
+  $('#comments').find('.btn_show_more').remove();
+  $('#comments').append('<%= j render @comments %>');
+  $('#comments').
+  append('<%= link_to t("show"), product_path(@product, comment_limit: @comments.last.id), remote: true, method: :get, class: "btn_show_more" %>');
+<% else %>
+  $('.btn_show_more').remove();
+<% end %>
