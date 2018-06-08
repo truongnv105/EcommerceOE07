@@ -1,0 +1,15 @@
+<p><%= t(".message_for_customer").upcase %></p>
+<% @order_details.each do |item| %>
+  <p><span><b><%= t ".product_name" %></b></span><%= item.product.name %></p>
+  <p>
+    <span><b><%= t ".product_price" %></b></span>
+    <%= number_to_currency(item.product.price, unit: t("vnd"),
+      precision: 0, format: "%n %u") %>
+  </p>
+  <p>
+    <span><b><%= t ".quantity" %></b></span>
+    <span><%= item.quantity %></span>
+  </p>
+  <hr />
+<% end %>
+<p><%= t ".signature" %></p>

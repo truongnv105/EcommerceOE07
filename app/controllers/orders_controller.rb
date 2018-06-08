@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
 
     if @order.save
       flash[:success] = t ".success"
+      UserMailer.order_success(@order).deliver_now
       session.delete :order_id
       @current_order = nil
       redirect_to root_url

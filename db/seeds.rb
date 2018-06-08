@@ -14,21 +14,24 @@ Category.create!(
   name: "pc"
 )
 
-30.times do |n|
+60.times do |n|
   name  = "PC-Computer-#{n+1}"
   describe = "description laptop #{n+1}"
-  price = 1000000
-  picture = File.open(File.join(Rails.root, "/app/assets/images/new-icon.png"))
+  price = 1000000 * n
   discount = 20
-  feature  = true
   category_id = 1
+  ram = 4+n
+  picture = File.open(File.join(Rails.root, "/app/assets/images/new-icon.png"))
   Product.create!(name:  name,
     describe: describe,
     price: price,
-    picture: picture,
+    RAM: ram,
     discount: discount,
-    feature: feature,
-    category_id: category_id)
+    category_id: category_id,
+      images_attributes:[
+        product_id: n+1,
+        picture: picture
+      ])
 end
 
 5.times do |n|
