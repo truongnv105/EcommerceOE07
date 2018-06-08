@@ -1,9 +1,7 @@
 <% provide :title, t(".password_reset") %>
-
-<h1><%= t ".password_reset" %></h1>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 password_user_pass">
+    <h1 class="text-center"><%= t ".password_reset" %></h1>
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
       <%= f.label :email, t(".email") %>
       <%= f.email_field :email, class: "form-control" %>
